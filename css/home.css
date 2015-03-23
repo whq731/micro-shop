@@ -527,7 +527,7 @@ body{background:#f1f1f1;}
 .goodsList_1, .goodsList_2, goodsList_3, goodsList_4{
 	margin:5px 0;
 }
-/*********ÉÌÆ·ÁÐ±í1 goodsList_1**********/
+/*********ï¿½ï¿½Æ·ï¿½Ð±ï¿½1 goodsList_1**********/
 .goodsList_1{}
 .goodsList_1 .widget_wrap{
 	background: #ffffff;
@@ -1319,11 +1319,9 @@ body{background:#f1f1f1;}
 
 
 @font-face {font-family: "wiconfont";
-  src: url('/vshop/Assets/font/menu/iconfont.eot'); /* IE9*/
-  src: url('/vshop/Assets/font/menu/iconfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-  url('/vshop/Assets/font/menu/iconfont.woff') format('woff'), /* chrome¡¢firefox */
-  url('/vshop/Assets/font/menu/iconfont.ttf') format('truetype'), /* chrome¡¢firefox¡¢opera¡¢Safari, Android, iOS 4.2+*/
-  url('/vshop/Assets/font/menu/iconfont.svg#wiconfont') format('svg'); /* iOS 4.1- */
+  url('font/menu/iconfont.woff') format('woff'), /* chromeï¿½ï¿½firefox */
+  url('font/menu/iconfont.ttf') format('truetype'), /* chromeï¿½ï¿½firefoxï¿½ï¿½operaï¿½ï¿½Safari, Android, iOS 4.2+*/
+  url('font/menu/iconfont.svg#wiconfont') format('svg'); /* iOS 4.1- */
 }
 
 *[class*="wicon-"] {

@@ -10,12 +10,12 @@
     <meta content="application/xhtml+xml;charset=UTF-8" http-equiv="Content-Type">
     <meta content="telephone=no, address=no" name="format-detection">
     <meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
-    <link href="/vshop/Assets/css/reset.css?v=044" rel="stylesheet" />
-    <link href="/vshop/Assets/css/common.css?v=044" rel="stylesheet" />
-    <link href="/vshop/Assets/css/home.css?v=044" rel="stylesheet" />
-    <link href="/vshop/Assets/css/widget_menu.css?v=044" rel="stylesheet" />
-    <script src="/vshop/Assets/lib/swipe_min.js?v=044"></script>
-    <script src="/vshop/Assets/lib_cmd/sea.js?v=044"></script>
+    <link href="css/reset.css?v=044" rel="stylesheet" />
+    <link href="css/common.css?v=044" rel="stylesheet" />
+    <link href="css/home.css?v=044" rel="stylesheet" />
+    <link href="css/widget_menu.css?v=044" rel="stylesheet" />
+    <script src="js/lib/swipe_min.js?v=044"></script>
+    <script src="js/sea.js?v=044"></script>
     <script>
         document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
             WeixinJSBridge.call('showOptionMenu');
@@ -34,8 +34,8 @@
                 type:"",
                 friendImgUrl:""
             },
-            limit:{val:0, name:'\u590f\u5a03\u7684\u79d8\u5bc6'}, //val: 1-Ö»ÔÊÐí·ÛË¿¹ºÂò
-            isopenfasbuy:false,//ÊÇ·ñ¿ªÆô·ÛË¿¹ºÂòÏÞÖÆ
+            limit:{val:0, name:'\u590f\u5a03\u7684\u79d8\u5bc6'}, //val: 1-Ö»ï¿½ï¿½ï¿½ï¿½ï¿½Ë¿ï¿½ï¿½ï¿½ï¿½
+            isopenfasbuy:false,//ï¿½Ç·ï¿½ï¿½ï¿½ï¿½ï¿½Ë¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
             AId: 308628,
             shareInfo:{followUrl:""},
             AgentId:"",
@@ -53,15 +53,16 @@
     <script>
         (function(l){
             seajs.config({
-                base: "/vshop/Assets/",
+//                base: "/js/",
                 map:[
                     [".js", (l&&l[1]||"")+".js?v=044"]
                 ]
             });
 		   
-            define("js_cmd/home", ["lib_cmd/zepto", "lib_cmd/myDialog"], function(require, exports, module){
+            define("js_cmd/home", ["lib_cmd/zepto", "lib_cmd/dialog"], function(require, exports, module){
                 var $ = require("lib_cmd/zepto"),
-                    myDialog = require("lib_cmd/myDialog");
+                    myDialog = require("lib_cmd/dialog");
+                debugger;
                 window.$ = $;
                 $.ajax({
                     type: "POST",
@@ -91,10 +92,10 @@
                                     }
                                 }
                             });
-                            if(res.Data.type=="40")//Î¢¿ÍÒýµ¼
+                            if(res.Data.type=="40")//Î¢ï¿½ï¿½ï¿½ï¿½
                             {
-                                APP.shareInfo.followUrl = res.Data.shareInfoUrl;//¿ªÍ¨Î¢¿ÍÒýµ¼
-                                APP.shareInfo.content=res.Data.content;//ÄÚÈÝ
+                                APP.shareInfo.followUrl = res.Data.shareInfoUrl;//ï¿½ï¿½Í¨Î¢ï¿½ï¿½ï¿½ï¿½
+                                APP.shareInfo.content=res.Data.content;//ï¿½ï¿½ï¿½ï¿½
                                 APP.shareInfo.type=res.Data.type;//
                                 APP.shareInfo.friendImgUrl=res.Data.wimgurl;
                             }
@@ -172,7 +173,7 @@
     <div class="widget_wrap">
         
         <label>
-            <p>ÇéÈË½ÚÐÇ×ùÏµÁÐ</p>
+            <p>ï¿½ï¿½ï¿½Ë½ï¿½ï¿½ï¿½ï¿½ï¿½Ïµï¿½ï¿½</p>
 
         </label>
         
@@ -188,12 +189,12 @@
                     <div>
                         <img src="http://shopimg.weimob.com/308628/Goods/1502081255381328.jpg@0e_320w_320h_0c_0i_0o_90Q_1x.src" />
                         
-                        <span name="goodsdetailspan" class="tag">ÌìÐ«×ù</span>
+                        <span name="goodsdetailspan" class="tag">ï¿½ï¿½Ð«ï¿½ï¿½</span>
                         
                     </div>
                     <div>
-                        <p class="title">ÌìÐ«×ù-Ò¹Îí÷ÈÓ°</p>
-                        <label class="price">£¤520.00</label>
+                        <p class="title">ï¿½ï¿½Ð«ï¿½ï¿½-Ò¹ï¿½ï¿½ï¿½ï¿½Ó°</p>
+                        <label class="price">ï¿½ï¿½520.00</label>
                     </div>
                 </a>
             </li>
@@ -203,12 +204,12 @@
                     <div>
                         <img src="http://shopimg.weimob.com/308628/Goods/1502081248256561.jpg@0e_320w_320h_0c_0i_0o_90Q_1x.src" />
                         
-                        <span name="goodsdetailspan" class="tag">Ë«×Ó×ù</span>
+                        <span name="goodsdetailspan" class="tag">Ë«ï¿½ï¿½ï¿½ï¿½</span>
                         
                     </div>
                     <div>
-                        <p class="title">Ë«×Ó×ù-ìÅ×ÏÐÇ¿Õ</p>
-                        <label class="price">£¤520.00</label>
+                        <p class="title">Ë«ï¿½ï¿½ï¿½ï¿½-ï¿½ï¿½ï¿½ï¿½ï¿½Ç¿ï¿½</p>
+                        <label class="price">ï¿½ï¿½520.00</label>
                     </div>
                 </a>
             </li>
@@ -226,12 +227,12 @@
                     <div>
                         <img src="http://shopimg.weimob.com/308628/Goods/1502081243162431.jpg@0e_320w_320h_0c_0i_0o_90Q_1x.src" />
                         
-                        <span name="goodsdetailspan" class="tag">Ë«Óã×ù</span>
+                        <span name="goodsdetailspan" class="tag">Ë«ï¿½ï¿½ï¿½ï¿½</span>
                         
                     </div>
                     <div>
-                        <p class="title">Ë«Óã×ù-ÐÄÐÄÏàÒÀ</p>
-                        <label class="price">£¤520.00</label>
+                        <p class="title">Ë«ï¿½ï¿½ï¿½ï¿½-ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</p>
+                        <label class="price">ï¿½ï¿½520.00</label>
                     </div>
                 </a>
             </li>
@@ -241,12 +242,12 @@
                     <div>
                         <img src="http://shopimg.weimob.com/308628/Goods/1502081238319952.jpg@0e_320w_320h_0c_0i_0o_90Q_1x.src" />
                         
-                        <span name="goodsdetailspan" class="tag">Ä¦ôÉ×ù</span>
+                        <span name="goodsdetailspan" class="tag">Ä¦ï¿½ï¿½ï¿½ï¿½</span>
                         
                     </div>
                     <div>
-                        <p class="title">Ä¦ôÉ×ù-ËÆË®ÈáÇé</p>
-                        <label class="price">£¤999.00</label>
+                        <p class="title">Ä¦ï¿½ï¿½ï¿½ï¿½-ï¿½ï¿½Ë®ï¿½ï¿½ï¿½ï¿½</p>
+                        <label class="price">ï¿½ï¿½999.00</label>
                     </div>
                 </a>
             </li>
@@ -264,12 +265,12 @@
                     <div>
                         <img src="http://shopimg.weimob.com/308628/Goods/1502081232599041.jpg@0e_320w_320h_0c_0i_0o_90Q_1x.src" />
                         
-                        <span name="goodsdetailspan" class="tag">Ë®Æ¿×ù</span>
+                        <span name="goodsdetailspan" class="tag">Ë®Æ¿ï¿½ï¿½</span>
                         
                     </div>
                     <div>
-                        <p class="title">Ë®Æ¿×ù-Ê¥Å®Ö®ÎÇ</p>
-                        <label class="price">£¤520.00</label>
+                        <p class="title">Ë®Æ¿ï¿½ï¿½-Ê¥Å®Ö®ï¿½ï¿½</p>
+                        <label class="price">ï¿½ï¿½520.00</label>
                     </div>
                 </a>
             </li>
@@ -279,12 +280,12 @@
                     <div>
                         <img src="http://shopimg.weimob.com/308628/Goods/1502081227145901.jpg@0e_320w_320h_0c_0i_0o_90Q_1x.src" />
                         
-                        <span name="goodsdetailspan" class="tag">ÉäÊÖ×ù</span>
+                        <span name="goodsdetailspan" class="tag">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</span>
                         
                     </div>
                     <div>
-                        <p class="title">ÉäÊÖ×ù-ÉîÀ¶ÓÕ»ó</p>
-                        <label class="price">£¤520.00</label>
+                        <p class="title">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½-ï¿½ï¿½ï¿½ï¿½ï¿½Õ»ï¿½</p>
+                        <label class="price">ï¿½ï¿½520.00</label>
                     </div>
                 </a>
             </li>
@@ -302,12 +303,12 @@
                     <div>
                         <img src="http://shopimg.weimob.com/308628/Goods/1502081221463186.jpg@0e_320w_320h_0c_0i_0o_90Q_1x.src" />
                         
-                        <span name="goodsdetailspan" class="tag">Ê¨×Ó×ù</span>
+                        <span name="goodsdetailspan" class="tag">Ê¨ï¿½ï¿½ï¿½ï¿½</span>
                         
                     </div>
                     <div>
-                        <p class="title">Ê¨×Ó×ù-ÈçÃÎÈç»Ã</p>
-                        <label class="price">£¤999.00</label>
+                        <p class="title">Ê¨ï¿½ï¿½ï¿½ï¿½-ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</p>
+                        <label class="price">ï¿½ï¿½999.00</label>
                     </div>
                 </a>
             </li>
@@ -317,12 +318,12 @@
                     <div>
                         <img src="http://shopimg.weimob.com/308628/Goods/1502081215344607.jpg@0e_320w_320h_0c_0i_0o_90Q_1x.src" />
                         
-                        <span name="goodsdetailspan" class="tag">°×Ñò×ù</span>
+                        <span name="goodsdetailspan" class="tag">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</span>
                         
                     </div>
                     <div>
-                        <p class="title">°×Ñò×ù-È¼Çé÷Èºü</p>
-                        <label class="price">£¤520.00</label>
+                        <p class="title">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½-È¼ï¿½ï¿½ï¿½Èºï¿½</p>
+                        <label class="price">ï¿½ï¿½520.00</label>
                     </div>
                 </a>
             </li>
@@ -340,12 +341,12 @@
                     <div>
                         <img src="http://shopimg.weimob.com/308628/Goods/1502081209312157.jpg@0e_320w_320h_0c_0i_0o_90Q_1x.src" />
                         
-                        <span name="goodsdetailspan" class="tag">Ìì³Ó×ù</span>
+                        <span name="goodsdetailspan" class="tag">ï¿½ï¿½ï¿½ï¿½ï¿½</span>
                         
                     </div>
                     <div>
-                        <p class="title">Ìì³Ó×ù-ÇÎÀö¼ÑÈË</p>
-                        <label class="price">£¤520.00</label>
+                        <p class="title">ï¿½ï¿½ï¿½ï¿½ï¿½-ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</p>
+                        <label class="price">ï¿½ï¿½520.00</label>
                     </div>
                 </a>
             </li>
@@ -359,8 +360,8 @@
                         
                     </div>
                     <div>
-                        <p class="title">½ðÅ£×ù-ÃÔ×íºìÑÕ</p>
-                        <label class="price">£¤520.00</label>
+                        <p class="title">ï¿½ï¿½Å£ï¿½ï¿½-ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</p>
+                        <label class="price">ï¿½ï¿½520.00</label>
                     </div>
                 </a>
             </li>
@@ -378,12 +379,12 @@
                     <div>
                         <img src="http://shopimg.weimob.com/308628/Goods/1502081156231834.jpg@0e_320w_320h_0c_0i_0o_90Q_1x.src" />
                         
-                        <span name="goodsdetailspan" class="tag">´¦Å®×ù</span>
+                        <span name="goodsdetailspan" class="tag">ï¿½ï¿½Å®ï¿½ï¿½</span>
                         
                     </div>
                     <div>
-                        <p class="title">´¦Å®×ù-»¨ÓïÓ³Ïñ</p>
-                        <label class="price">£¤520.00</label>
+                        <p class="title">ï¿½ï¿½Å®ï¿½ï¿½-ï¿½ï¿½ï¿½ï¿½Ó³ï¿½ï¿½</p>
+                        <label class="price">ï¿½ï¿½520.00</label>
                     </div>
                 </a>
             </li>
@@ -393,12 +394,12 @@
                     <div>
                         <img src="http://shopimg.weimob.com/308628/Goods/1502081148410208.jpg@0e_320w_320h_0c_0i_0o_90Q_1x.src" />
                         
-                        <span name="goodsdetailspan" class="tag">¾ÞÐ·×ù</span>
+                        <span name="goodsdetailspan" class="tag">ï¿½ï¿½Ð·ï¿½ï¿½</span>
                         
                     </div>
                     <div>
-                        <p class="title">¾ÞÐ·×ù-SSÍ¬¿î</p>
-                        <label class="price">£¤1314.00</label>
+                        <p class="title">ï¿½ï¿½Ð·ï¿½ï¿½-SSÍ¬ï¿½ï¿½</p>
+                        <label class="price">ï¿½ï¿½1314.00</label>
                     </div>
                 </a>
             </li>
@@ -412,7 +413,7 @@
     <div class="widget_wrap">
         
         <label>
-            <p>ÐÂÆ·Ê×·¢</p>
+            <p>ï¿½ï¿½Æ·ï¿½×·ï¿½</p>
 
         </label>
         
@@ -428,12 +429,12 @@
                     <div>
                         <img src="http://shopimg.weimob.com/308628/Goods/1501231900585855.jpg@0e_320w_320h_0c_0i_0o_90Q_1x.src" />
                         
-                        <span name="goodsdetailspan" class="tag">ÐÂÆ·</span>
+                        <span name="goodsdetailspan" class="tag">ï¿½ï¿½Æ·</span>
                         
                     </div>
                     <div>
-                        <p class="title">ÏÄÍÞµÄÃØÃÜ-ÏËÔÆç²ÃÎ</p>
-                        <label class="price">£¤499.00</label>
+                        <p class="title">ï¿½ï¿½ï¿½Þµï¿½ï¿½ï¿½ï¿½ï¿½-ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</p>
+                        <label class="price">ï¿½ï¿½499.00</label>
                     </div>
                 </a>
             </li>
@@ -443,12 +444,12 @@
                     <div>
                         <img src="http://shopimg.weimob.com/308628/Goods/1501231857254621.jpg@0e_320w_320h_0c_0i_0o_90Q_1x.src" />
                         
-                        <span name="goodsdetailspan" class="tag">ÐÂÆ·</span>
+                        <span name="goodsdetailspan" class="tag">ï¿½ï¿½Æ·</span>
                         
                     </div>
                     <div>
-                        <p class="title">ÏÄÍÞµÄÃØÃÜ-Ò»Á±÷ÈÓ°</p>
-                        <label class="price">£¤599.00</label>
+                        <p class="title">ï¿½ï¿½ï¿½Þµï¿½ï¿½ï¿½ï¿½ï¿½-Ò»ï¿½ï¿½ï¿½ï¿½Ó°</p>
+                        <label class="price">ï¿½ï¿½599.00</label>
                     </div>
                 </a>
             </li>
@@ -466,12 +467,12 @@
                     <div>
                         <img src="http://shopimg.weimob.com/308628/Goods/1501231854341763.jpg@0e_320w_320h_0c_0i_0o_90Q_1x.src" />
                         
-                        <span name="goodsdetailspan" class="tag">ÐÂÆ·</span>
+                        <span name="goodsdetailspan" class="tag">ï¿½ï¿½Æ·</span>
                         
                     </div>
                     <div>
-                        <p class="title">ÏÄÍÞµÄÃØÃÜ-×ÏÂÞÀ¼Ö®Áµ</p>
-                        <label class="price">£¤499.00</label>
+                        <p class="title">ï¿½ï¿½ï¿½Þµï¿½ï¿½ï¿½ï¿½ï¿½-ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö®ï¿½ï¿½</p>
+                        <label class="price">ï¿½ï¿½499.00</label>
                     </div>
                 </a>
             </li>
@@ -481,12 +482,12 @@
                     <div>
                         <img src="http://shopimg.weimob.com/308628/Goods/1501231850564784.jpg@0e_320w_320h_0c_0i_0o_90Q_1x.src" />
                         
-                        <span name="goodsdetailspan" class="tag">ÐÂÆ·</span>
+                        <span name="goodsdetailspan" class="tag">ï¿½ï¿½Æ·</span>
                         
                     </div>
                     <div>
-                        <p class="title">ÏÄÍÞµÄÃØÃÜ-ñöÌý»¨¿ª</p>
-                        <label class="price">£¤499.00</label>
+                        <p class="title">ï¿½ï¿½ï¿½Þµï¿½ï¿½ï¿½ï¿½ï¿½-ï¿½ï¿½ï¿½ï¿½</p>
+                        <label class="price">ï¿½ï¿½499.00</label>
                     </div>
                 </a>
             </li>
@@ -504,12 +505,12 @@
                     <div>
                         <img src="http://shopimg.weimob.com/308628/Goods/1501231846535032.jpg@0e_320w_320h_0c_0i_0o_90Q_1x.src" />
                         
-                        <span name="goodsdetailspan" class="tag">ÐÂÆ·</span>
+                        <span name="goodsdetailspan" class="tag">ï¿½ï¿½Æ·</span>
                         
                     </div>
                     <div>
-                        <p class="title">ÏÄÍÞµÄÃØÃÜ-ÃÔµûÏþÃÎ</p>
-                        <label class="price">£¤499.00</label>
+                        <p class="title">ï¿½ï¿½ï¿½Þµï¿½ï¿½ï¿½ï¿½ï¿½-ï¿½Ôµï¿½ï¿½ï¿½ï¿½ï¿½</p>
+                        <label class="price">ï¿½ï¿½499.00</label>
                     </div>
                 </a>
             </li>
@@ -519,12 +520,12 @@
                     <div>
                         <img src="http://shopimg.weimob.com/308628/Goods/1501231842410585.jpg@0e_320w_320h_0c_0i_0o_90Q_1x.src" />
                         
-                        <span name="goodsdetailspan" class="tag">ÐÂÆ·</span>
+                        <span name="goodsdetailspan" class="tag">ï¿½ï¿½Æ·</span>
                         
                     </div>
                     <div>
-                        <p class="title">ÏÄÍÞµÄÃØÃÜ-·Û÷ì¼ÑÈË</p>
-                        <label class="price">£¤499.00</label>
+                        <p class="title">ï¿½ï¿½ï¿½Þµï¿½ï¿½ï¿½ï¿½ï¿½-ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</p>
+                        <label class="price">ï¿½ï¿½499.00</label>
                     </div>
                 </a>
             </li>
@@ -542,12 +543,12 @@
                     <div>
                         <img src="http://shopimg.weimob.com/308628/Goods/1501231838110589.jpg@0e_320w_320h_0c_0i_0o_90Q_1x.src" />
                         
-                        <span name="goodsdetailspan" class="tag">ÐÂÆ·</span>
+                        <span name="goodsdetailspan" class="tag">ï¿½ï¿½Æ·</span>
                         
                     </div>
                     <div>
-                        <p class="title">ÏÄÍÞµÄÃØÃÜ-Ò»Ä¨ÏãºÛ</p>
-                        <label class="price">£¤499.00</label>
+                        <p class="title">ï¿½ï¿½ï¿½Þµï¿½ï¿½ï¿½ï¿½ï¿½-Ò»Ä¨ï¿½ï¿½ï¿½</p>
+                        <label class="price">ï¿½ï¿½499.00</label>
                     </div>
                 </a>
             </li>
@@ -559,8 +560,8 @@
                         
                     </div>
                     <div>
-                        <p class="title">ÏÄÍÞµÄÃØÃÜ-ÈçÃÎÈç»Ã</p>
-                        <label class="price">£¤699.00</label>
+                        <p class="title">ï¿½ï¿½ï¿½Þµï¿½ï¿½ï¿½ï¿½ï¿½-ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</p>
+                        <label class="price">ï¿½ï¿½699.00</label>
                     </div>
                 </a>
             </li>
@@ -580,8 +581,8 @@
                         
                     </div>
                     <div>
-                        <p class="title">ÏÄÍÞµÄÃØÃÜ-ÈáÇéËÆË®</p>
-                        <label class="price">£¤799.00</label>
+                        <p class="title">ï¿½ï¿½ï¿½Þµï¿½ï¿½ï¿½ï¿½ï¿½-ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ë®</p>
+                        <label class="price">ï¿½ï¿½799.00</label>
                     </div>
                 </a>
             </li>
@@ -593,8 +594,8 @@
                         
                     </div>
                     <div>
-                        <p class="title">ÏÄÍÞµÄÃØÃÜ-È¼ÇéÊ±¿Ì</p>
-                        <label class="price">£¤499.00</label>
+                        <p class="title">ï¿½ï¿½ï¿½Þµï¿½ï¿½ï¿½ï¿½ï¿½-È¼ï¿½ï¿½Ê±ï¿½ï¿½</p>
+                        <label class="price">ï¿½ï¿½499.00</label>
                     </div>
                 </a>
             </li>
@@ -614,8 +615,8 @@
                         
                     </div>
                     <div>
-                        <p class="title">ÏÄÍÞµÄÃØÃÜ-»¨Ö®ÝíÀÙ</p>
-                        <label class="price">£¤499.00</label>
+                        <p class="title">ï¿½ï¿½ï¿½Þµï¿½ï¿½ï¿½ï¿½ï¿½-ï¿½ï¿½Ö®ï¿½ï¿½ï¿½ï¿½</p>
+                        <label class="price">ï¿½ï¿½499.00</label>
                     </div>
                 </a>
             </li>
@@ -627,8 +628,8 @@
                         
                     </div>
                     <div>
-                        <p class="title">ÏÄÍÞµÄÃØÃÜ-°µÒ¹Å®Íõ</p>
-                        <label class="price">£¤599.00</label>
+                        <p class="title">ï¿½ï¿½ï¿½Þµï¿½ï¿½ï¿½ï¿½ï¿½-ï¿½ï¿½Ò¹Å®ï¿½ï¿½</p>
+                        <label class="price">ï¿½ï¿½599.00</label>
                     </div>
                 </a>
             </li>
@@ -648,8 +649,8 @@
                         
                     </div>
                     <div>
-                        <p class="title">ÏÄÍÞµÄÃØÃÜ-Ê¥Å®Ö®ÎÇ</p>
-                        <label class="price">£¤520.00</label>
+                        <p class="title">ï¿½ï¿½ï¿½Þµï¿½ï¿½ï¿½ï¿½ï¿½-Ê¥Å®Ö®ï¿½ï¿½</p>
+                        <label class="price">ï¿½ï¿½520.00</label>
                     </div>
                 </a>
             </li>
@@ -661,8 +662,8 @@
                         
                     </div>
                     <div>
-                        <p class="title">ÏÄÍÞµÄÃØÃÜ-Ò¹Îí÷ÈÓ°</p>
-                        <label class="price">£¤599.00</label>
+                        <p class="title">ï¿½ï¿½ï¿½Þµï¿½ï¿½ï¿½ï¿½ï¿½-Ò¹ï¿½ï¿½ï¿½ï¿½Ó°</p>
+                        <label class="price">ï¿½ï¿½599.00</label>
                     </div>
                 </a>
             </li>
@@ -682,8 +683,8 @@
                         
                     </div>
                     <div>
-                        <p class="title">ÏÄÍÞµÄÃØÃÜ-Ó×Ö®ÍÉ±ä</p>
-                        <label class="price">£¤499.00</label>
+                        <p class="title">ï¿½ï¿½ï¿½Þµï¿½ï¿½ï¿½ï¿½ï¿½-ï¿½ï¿½Ö®ï¿½É±ï¿½</p>
+                        <label class="price">ï¿½ï¿½499.00</label>
                     </div>
                 </a>
             </li>
@@ -695,8 +696,8 @@
                         
                     </div>
                     <div>
-                        <p class="title">ÏÄÍÞµÄÃØÃÜ-ÃÄ¸ÐÎè¶¯</p>
-                        <label class="price">£¤499.00</label>
+                        <p class="title">ï¿½ï¿½ï¿½Þµï¿½ï¿½ï¿½ï¿½ï¿½-ï¿½Ä¸ï¿½ï¿½è¶¯</p>
+                        <label class="price">ï¿½ï¿½499.00</label>
                     </div>
                 </a>
             </li>
@@ -716,8 +717,8 @@
                         
                     </div>
                     <div>
-                        <p class="title">ÏÄÍÞµÄÃØÃÜ-»¨ÓïÓ³Ïñ£¨¶Ì¿î£©</p>
-                        <label class="price">£¤599.00</label>
+                        <p class="title">ï¿½ï¿½ï¿½Þµï¿½ï¿½ï¿½ï¿½ï¿½-ï¿½ï¿½ï¿½ï¿½Ó³ï¿½ñ£¨¶Ì¿î£©</p>
+                        <label class="price">ï¿½ï¿½599.00</label>
                     </div>
                 </a>
             </li>
@@ -729,8 +730,8 @@
                         
                     </div>
                     <div>
-                        <p class="title">ÏÄÍÞµÄÃØÃÜ-»¨ÓïÓ³Ïñ£¨³¤¿î£©</p>
-                        <label class="price">£¤799.00</label>
+                        <p class="title">ï¿½ï¿½ï¿½Þµï¿½ï¿½ï¿½ï¿½ï¿½-ï¿½ï¿½ï¿½ï¿½Ó³ï¿½ñ£¨³ï¿½ï¿½î£©</p>
+                        <label class="price">ï¿½ï¿½799.00</label>
                     </div>
                 </a>
             </li>
@@ -750,8 +751,8 @@
                         
                     </div>
                     <div>
-                        <p class="title">ÏÄÍÞµÄÃØÃÜ-SSÍ¬¿î</p>
-                        <label class="price">£¤1314.00</label>
+                        <p class="title">ï¿½ï¿½ï¿½Þµï¿½ï¿½ï¿½ï¿½ï¿½-SSÍ¬ï¿½ï¿½</p>
+                        <label class="price">ï¿½ï¿½1314.00</label>
                     </div>
                 </a>
             </li>
@@ -780,12 +781,12 @@
 
                 <li>
                     <p class="box">
-                        <a href="http://308628.m.weimob.com/vshop/index">µêÆÌÊ×Ò³</a>
-                        <a href="http://308628.m.weimob.com/vshop/UserCenter">»áÔ±ÖÐÐÄ</a>
-                        <a href="tel:021-65219708">ÁªÏµÎÒÃÇ</a>
+                        <a href="http://308628.m.weimob.com/vshop/index">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò³</a>
+                        <a href="http://308628.m.weimob.com/vshop/UserCenter">ï¿½ï¿½Ô±ï¿½ï¿½ï¿½ï¿½</a>
+                        <a href="tel:021-65219708">ï¿½ï¿½Ïµï¿½ï¿½ï¿½ï¿½</a>
                     </p>
                     <p>
-                        <a href="javascript:;">?ÏÄÍÞµÄÃØÃÜ¹Ù·½ÉÌ³Ç</a>
+                        <a href="javascript:;">?ï¿½ï¿½ï¿½Þµï¿½ï¿½ï¿½ï¿½Ü¹Ù·ï¿½ï¿½Ì³ï¿½</a>
                     </p>
                 </li>
             </ul>
@@ -794,10 +795,10 @@
     
     <script type="text/javascript" src="http://stc.weimob.com/src/st/share_channel.js?v=111111"></script>
     <script>
-        var isGoodsDetial=0;//ÊÇ·ñÏêÇéÒ³
+        var isGoodsDetial=0;//ï¿½Ç·ï¿½ï¿½ï¿½ï¿½ï¿½Ò³
         var APPShareLink = "http://308628.m.weimob.com/vshop/index?";
-        var APPShareDes = 'ÎÞÇéÈ¤²»Éú»î';
-        var APPShareTitle = 'ÏÄÍÞµÄÃØÃÜ';
+        var APPShareDes = 'ï¿½ï¿½ï¿½ï¿½È¤ï¿½ï¿½ï¿½ï¿½ï¿½';
+        var APPShareTitle = 'ï¿½ï¿½ï¿½Þµï¿½ï¿½ï¿½ï¿½ï¿½';
         var APPShareimg = 'http://hs-net-shop-img.oss-cn-hangzhou.aliyuncs.com/308628/Group/1411011832384713.jpg';
         var APPShareTitleId = "";
         var APPShareDesId = "";
@@ -805,8 +806,8 @@
         var APPShareimgId = "";
 
         var FriendShareLink = "http://308628.m.weimob.com/vshop/index?";
-        var FriendShareDes = 'ÎÞÇéÈ¤²»Éú»î';
-        var FriendShareTitle = 'ÏÄÍÞµÄÃØÃÜ';
+        var FriendShareDes = 'ï¿½ï¿½ï¿½ï¿½È¤ï¿½ï¿½ï¿½ï¿½ï¿½';
+        var FriendShareTitle = 'ï¿½ï¿½ï¿½Þµï¿½ï¿½ï¿½ï¿½ï¿½';
         var FriendShareimg = 'http://hs-net-shop-img.oss-cn-hangzhou.aliyuncs.com/308628/Group/1411011832384713.jpg';
         var FriendShareDesId = '';
         var FriendShareTitleId = '';
@@ -814,10 +815,10 @@
         var FriendShareimgId = '';
 
         var WeiboShareimg = 'http://hs-net-shop-img.oss-cn-hangzhou.aliyuncs.com/308628/Group/1411011832384713.jpg';
-        var WeiboShareDes = 'ÎÞÇéÈ¤²»Éú»î';
+        var WeiboShareDes = 'ï¿½ï¿½ï¿½ï¿½È¤ï¿½ï¿½ï¿½ï¿½ï¿½';
         var WeiboShareimgId = "";
         var WeiboShareDesId = '';
-        document.title = 'ÏÄÍÞµÄÃØÃÜ';
+        document.title = 'ï¿½ï¿½ï¿½Þµï¿½ï¿½ï¿½ï¿½ï¿½';
 
         var ShareSDAgentId = -1;
         var ShareAgentId = -1;
@@ -830,7 +831,7 @@
             if (imgs && imgs.length > 0 && imgs[0]) {
                 img = $(imgs[0]).attr("src");
             }
-            // ·¢ËÍ¸øºÃÓÑ
+            // ï¿½ï¿½ï¿½Í¸ï¿½ï¿½ï¿½ï¿½
             WeixinJSBridge.on('menu:share:appmessage', function (argv) {
                 var thisimg = APPShareimg;
                 if (thisimg == "" && APPShareimgId != "") {
@@ -860,8 +861,8 @@
                     "img_width": "640",
                     "img_height": "640",
                     "link": thislink,
-                    "desc": (isGoodsDetial==1?("À´×ÔÎ¢ÐÅºÃµê£º"+"ÏÄÍÞµÄÃØÃÜ"):thisDes),
-                    "title": ((isGoodsDetial==0?"ÍÆ¼öÒ»¼ÒºÃµê£º":"")+ thisTitle)
+                    "desc": (isGoodsDetial==1?("ï¿½ï¿½ï¿½ï¿½Î¢ï¿½ÅºÃµê£º"+"ï¿½ï¿½ï¿½Þµï¿½ï¿½ï¿½ï¿½ï¿½"):thisDes),
+                    "title": ((isGoodsDetial==0?"ï¿½Æ¼ï¿½Ò»ï¿½ÒºÃµê£º":"")+ thisTitle)
                     
                 }, function (res) {
                     if ('send_app_msg:cancel' != res.err_msg) {
@@ -881,7 +882,7 @@
                 })
             });
 
-            // ·ÖÏíµ½ÅóÓÑÈ¦
+            // ï¿½ï¿½ï¿½?ï¿½ï¿½ï¿½ï¿½È¦
             WeixinJSBridge.on('menu:share:timeline', function (argv) {
                 var thisimg = FriendShareimg;
                 if (thisimg == "") {
@@ -911,11 +912,11 @@
                     "img_width": "640",
                     "img_height": "640",
                     "link": thislink,
-                    "desc": (isGoodsDetial==1?"ÍÆ¼öÒ»¼ÒºÃµê£º"+"ÏÄÍÞµÄÃØÃÜ":thisTitle ),
-                    "title":((isGoodsDetial==0?"ÍÆ¼öÒ»¼ÒºÃµê£º":"")+ thisTitle)
+                    "desc": (isGoodsDetial==1?"ï¿½Æ¼ï¿½Ò»ï¿½ÒºÃµê£º"+"ï¿½ï¿½ï¿½Þµï¿½ï¿½ï¿½ï¿½ï¿½":thisTitle ),
+                    "title":((isGoodsDetial==0?"ï¿½Æ¼ï¿½Ò»ï¿½ÒºÃµê£º":"")+ thisTitle)
                 }, function (res) {
                     if ('share_timeline:cancel' != res.err_msg) {
-                        //Èç¹ûÓÃ»§Ã»ÓÐÈ¡Ïû
+                        //ï¿½ï¿½ï¿½ï¿½Ã»ï¿½Ã»ï¿½ï¿½È¡ï¿½ï¿½
                         if (APP && APP.page && APP.page == "detail" && ShareVKId > 0) {
                             var sdagentid = 0;
                             if(ShareSDAgentId > 0){
@@ -932,7 +933,7 @@
                 });
             });
 
-            // ·ÖÏíµ½Î¢²©
+            // ï¿½ï¿½ï¿½?Î¢ï¿½ï¿½
             WeixinJSBridge.on('menu:share:weibo', function (argv) {
                 var thisimg = WeiboShareimg;
                 if (thisimg == "" && WeiboShareimgId != "") {
@@ -1007,11 +1008,11 @@
 
         var statisticServerPath = "http://statistic.weimob.com";
         st.push("_triggerEvent", {
-            "is_statistic_on": "on", //¿ª¹Ø
-            "statisticServerPath": statisticServerPath + "/wm.js", //Í³¼ÆµØÖ·
-            "memcServerPath": statisticServerPath + "/memc?cmd=get", //»º´æµØÖ·
-            "stat_action": "loadPage",  //Í³¼Æ¶¯×÷ÀàÐÍ
-            "stat_optValue": ""    //²ÎÊýÖµ
+            "is_statistic_on": "on", //ï¿½ï¿½ï¿½ï¿½
+            "statisticServerPath": statisticServerPath + "/wm.js", //Í³ï¿½Æµï¿½Ö·
+            "memcServerPath": statisticServerPath + "/memc?cmd=get", //ï¿½ï¿½ï¿½ï¿½ï¿½Ö·
+            "stat_action": "loadPage",  //Í³ï¿½Æ¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+            "stat_optValue": ""    //ï¿½ï¿½ï¿½ï¿½Öµ
         });
     </script>
 </div>
@@ -1023,35 +1024,35 @@
             <li>
                 <a data-fx="Modulefx" href="/vshop/index">
                     <span class="wicon-home">&nbsp;</span>
-                    <p>Ê×Ò³</p>
+                    <p>ï¿½ï¿½Ò³</p>
                 </a>
             </li>
             
             <li>
                 <a data-fx="Modulefx" href="http://kf.weimob.com/MobileTalking.aspx?aid=308628">
                     <span class="wicon-service">&nbsp;</span>
-                    <p>¿Í·þ</p>
+                    <p>ï¿½Í·ï¿½</p>
                 </a>
             </li>
             
             <li>
                 <a data-fx="Modulefx" href="/vshop/UserCenter">
                     <span class="wicon-info">&nbsp;</span>
-                    <p>ÓÃ»§ÖÐÐÄ</p>
+                    <p>ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½</p>
                 </a>
             </li>
             
             <li>
                 <a data-fx="Modulefx" href="/payment/weixinpay/shopAddress?type=0">
                     <span class="wicon-address">&nbsp;</span>
-                    <p>ÊÕ»õµØÖ·</p>
+                    <p>ï¿½Õ»ï¿½ï¿½ï¿½Ö·</p>
                 </a>
             </li>
             
             <li>
                 <a data-fx="Modulefx" href="/vshop/UserCenter/MyShoppingCart">
                     <span class="wicon-cart">&nbsp;</span>
-                    <p>¹ºÎï³µ</p>
+                    <p>ï¿½ï¿½ï¿½ï³µ</p>
                 </a>
             </li>
             
