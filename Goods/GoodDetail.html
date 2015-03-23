@@ -1,12 +1,21 @@
-
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head id="Head1"><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><title>
+<head id="Head1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>
 
-</title><meta charset="utf-8" /><meta name="description" /><meta name="keywords" /><meta content="eric.wu" name="author" /><meta content="application/xhtml+xml;charset=UTF-8" http-equiv="Content-Type" />
+    </title>
+    <meta charset="utf-8"/>
+    <meta name="description"/>
+    <meta name="keywords"/>
+    <meta content="application/xhtml+xml;charset=UTF-8" http-equiv="Content-Type"/>
     <!-- <meta content="no-cache,must-revalidate" http-equiv="Cache-Control" /><meta content="no-cache" http-equiv="pragma" /><meta content="0" http-equiv="expires" /> -->
-    <meta content="telephone=no, address=no" name="format-detection" /><meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" /><link href="/vshop/Assets/css/reset.css?v=&lt;%=HelpCode.JsVersion %>" rel="stylesheet" /><link href="/vshop/Assets/css/common.css?v=&lt;%=HelpCode.JsVersion %>" rel="stylesheet" /><link href="/vshop/Assets/css/detail3.css?v=&lt;%=HelpCode.JsVersion %>" rel="stylesheet" />
+    <meta content="telephone=no, address=no" name="format-detection"/>
+    <meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+    <link href="../css/reset.css?v=1" rel="stylesheet"/>
+    <link href="../css/common.css?v=1" rel="stylesheet"/>
+    <link href="../css/detail3.css?v=1" rel="stylesheet"/>
     <script>
         document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
             WeixinJSBridge.call('showOptionMenu');
@@ -17,11 +26,11 @@
             page: "detail",
             message: true,
             goTop: true,
-            limit:{val:0,name:'\u590f\u5a03\u7684\u79d8\u5bc6'}, //val: 1-只允许粉丝购买
+            limit: {val: 0, name: '\u590f\u5a03\u7684\u79d8\u5bc6'}, //val: 1-只允许粉丝购买
             goodsInfo: {
                 goodsId: 166088,
                 imgs: [],
-                collected: (0==1)?true:false,
+                collected: (0 == 1) ? true : false,
                 shopcartSum: 1,
 
                 comment: {
@@ -29,44 +38,44 @@
                     A: 0,
                     B: 0,
                     C: 0
-                    }
+                }
             },
             AId: 308628,
-            comments_count:0,
+            comments_count: 0,
             openid: "",
-            DAgentId:0,
-            AgentId:0,
-            EmployeesId:0,
-            VKId:0,
-            shareInfo:{
-                type:"", //<10:匿名分享><20:好友分享><30:微客分享>
-                wOpenId:"",//微信号openId
-                wNickName:"",//公众号名称
-                wImgUrl:"",//公众号头像
+            DAgentId: 0,
+            AgentId: 0,
+            EmployeesId: 0,
+            VKId: 0,
+            shareInfo: {
+                type: "", //<10:匿名分享><20:好友分享><30:微客分享>
+                wOpenId: "",//微信号openId
+                wNickName: "",//公众号名称
+                wImgUrl: "",//公众号头像
 
-                friendOpenId:"",//分享人openId
-                friendName:"",//分享人信息
-                friendImgUrl:"",//分享人头像
+                friendOpenId: "",//分享人openId
+                friendName: "",//分享人信息
+                friendImgUrl: "",//分享人头像
 
-                commission:"",
-                followUrl:""
+                commission: "",
+                followUrl: ""
             },
             urls: {
-                shopcart_page: "/vshop/UserCenter/MyShoppingCart",
-                sku_url: "/vshop/Ajax/Get/GetProductsDetailNew",
-                comments_url: "/vshop/Ajax/Get/GetGoodsComment",
-                add2shopcart_url: "/vshop/Ajax/Post/AddShoppingCart",
-                buy_url: "/vshop/Order/CreateOrder",
-                fav_url: "/vshop/Ajax/Post/SaveCollect?Id=166088",
-                goodsDetailDeliveryType_url: "/vshop/Ajax/Get/GoodsDetailDeliveryType"
+                shopcart_page: "/micro-shop/UserCenter/MyShoppingCart",
+                sku_url: "/micro-shop/Ajax/Get/GetProductsDetailNew",
+                comments_url: "/micro-shop/Ajax/Get/GetGoodsComment",
+                add2shopcart_url: "/micro-shop/Ajax/Post/AddShoppingCart",
+                buy_url: "/micro-shop/Order/CreateOrder",
+                fav_url: "/micro-shop/Ajax/Post/SaveCollect?Id=166088",
+                goodsDetailDeliveryType_url: "/micro-shop/Ajax/Get/GoodsDetailDeliveryType"
             }
         }
     </script>
-    <script src="/vshop/Assets/lib_cmd/sea.js?v=044"></script>
+    <script src="../js/sea.js?v=044"></script>
     <script>
         (function (l) {
             seajs.config({
-                base: "/vshop/Assets/",
+//                base: "/micro-shop/Assets/",
                 map: [
                     [".js", (l && l[1] || "") + ".js?v=044"]
                 ]
@@ -78,518 +87,570 @@
 
 
 <body onselectstart="return true;" ondragstart="return false;">
-    <div data-role="container" class="container detail3">
-        <header data-role="header">
-            <div data-role="widget" data-widget="slider_3" class="slider_3">
-                <section data-role="widget" data-widget="img_prev_view" class="widget_wrap">
-                    <div id="slider_3_wrap" class="slider_3_wrap">
-                        <ul>
-                            
-                            <li class="swiper-slide">
-                                <a href="javascript:;">
-                                    <img src="http://shopimg.weimob.com/308628/Goods/1502081255381328.jpg@0e_640w_640h_0c_0i_0o_90Q_1x.src" data-src="http://shopimg.weimob.com/308628/Goods/1502081255381328.jpg@0e_640w_640h_0c_0i_0o_90Q_1x.src" />
-                                </a>
-                            </li>
+<div data-role="container" class="container detail3">
+    <header data-role="header">
+        <div data-role="widget" data-widget="slider_3" class="slider_3">
+            <section data-role="widget" data-widget="img_prev_view" class="widget_wrap">
+                <div id="slider_3_wrap" class="slider_3_wrap">
+                    <ul>
 
-                            
-                            <li class="swiper-slide">
-                                <a href="javascript:;">
-                                    <img src="http://shopimg.weimob.com/308628/Goods/1502081255407007.jpg@0e_640w_640h_0c_0i_0o_90Q_1x.src" data-src="http://shopimg.weimob.com/308628/Goods/1502081255407007.jpg@0e_640w_640h_0c_0i_0o_90Q_1x.src" />
-                                </a>
-                            </li>
+                        <li class="swiper-slide">
+                            <a href="javascript:;">
+                                <img src="http://shopimg.weimob.com/308628/Goods/1502081255381328.jpg@0e_640w_640h_0c_0i_0o_90Q_1x.src"
+                                     data-src="http://shopimg.weimob.com/308628/Goods/1502081255381328.jpg@0e_640w_640h_0c_0i_0o_90Q_1x.src"/>
+                            </a>
+                        </li>
 
-                            
-                            <li class="swiper-slide">
-                                <a href="javascript:;">
-                                    <img src="http://shopimg.weimob.com/308628/Goods/1502081255420122.jpg@0e_640w_640h_0c_0i_0o_90Q_1x.src" data-src="http://shopimg.weimob.com/308628/Goods/1502081255420122.jpg@0e_640w_640h_0c_0i_0o_90Q_1x.src" />
-                                </a>
-                            </li>
 
-                            
-                            <li class="swiper-slide">
-                                <a href="javascript:;">
-                                    <img src="http://shopimg.weimob.com/308628/Goods/1502081255334259.jpg@0e_640w_640h_0c_0i_0o_90Q_1x.src" data-src="http://shopimg.weimob.com/308628/Goods/1502081255334259.jpg@0e_640w_640h_0c_0i_0o_90Q_1x.src" />
-                                </a>
-                            </li>
+                        <li class="swiper-slide">
+                            <a href="javascript:;">
+                                <img src="http://shopimg.weimob.com/308628/Goods/1502081255407007.jpg@0e_640w_640h_0c_0i_0o_90Q_1x.src"
+                                     data-src="http://shopimg.weimob.com/308628/Goods/1502081255407007.jpg@0e_640w_640h_0c_0i_0o_90Q_1x.src"/>
+                            </a>
+                        </li>
 
-                            
-                            <li class="swiper-slide">
-                                <a href="javascript:;">
-                                    <img src="http://shopimg.weimob.com/308628/Goods/1502081255479222.jpg@0e_640w_640h_0c_0i_0o_90Q_1x.src" data-src="http://shopimg.weimob.com/308628/Goods/1502081255479222.jpg@0e_640w_640h_0c_0i_0o_90Q_1x.src" />
-                                </a>
-                            </li>
 
-                            
-                        </ul>
-                        <div id="slider_3_indicate" class="slider_3_indicate">
+                        <li class="swiper-slide">
+                            <a href="javascript:;">
+                                <img src="http://shopimg.weimob.com/308628/Goods/1502081255420122.jpg@0e_640w_640h_0c_0i_0o_90Q_1x.src"
+                                     data-src="http://shopimg.weimob.com/308628/Goods/1502081255420122.jpg@0e_640w_640h_0c_0i_0o_90Q_1x.src"/>
+                            </a>
+                        </li>
+
+
+                        <li class="swiper-slide">
+                            <a href="javascript:;">
+                                <img src="http://shopimg.weimob.com/308628/Goods/1502081255334259.jpg@0e_640w_640h_0c_0i_0o_90Q_1x.src"
+                                     data-src="http://shopimg.weimob.com/308628/Goods/1502081255334259.jpg@0e_640w_640h_0c_0i_0o_90Q_1x.src"/>
+                            </a>
+                        </li>
+
+
+                        <li class="swiper-slide">
+                            <a href="javascript:;">
+                                <img src="http://shopimg.weimob.com/308628/Goods/1502081255479222.jpg@0e_640w_640h_0c_0i_0o_90Q_1x.src"
+                                     data-src="http://shopimg.weimob.com/308628/Goods/1502081255479222.jpg@0e_640w_640h_0c_0i_0o_90Q_1x.src"/>
+                            </a>
+                        </li>
+
+
+                    </ul>
+                    <div id="slider_3_indicate" class="slider_3_indicate">
+                        <!---->
+                    </div>
+                </div>
+            </section>
+        </div>
+    </header>
+
+
+    <section data-role="body" class="body">
+        <!--基本信息-->
+        <div class="section_body info_basic">
+            <div>
+                <ul>
+                    <li>
+                        <div class="tbox title_and_fav">
+                            <div id="label_title" class="title" style="width: 100%;">天蝎座-夜雾魅影</div>
+                            <div>
+                                <div class="fav">
+                                    <span id="icon_fav1" class="icon_fav">&nbsp;</span>
+                                    <label>&nbsp;</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tbox price_and_fav price_and_sale">
+                            <div>
+                                <div class="price">
+                                    <p>
+                                        微信价：
+                                        <span id="label_price"></span>
+
+                                    </p>
+
+                                    <p><span>原价：￥<span id="label_price_original"></span></span></p>
+                                </div>
+                            </div>
+                        </div>
+                        <!--/li>
+                        <li-->
+
+
+                        <p class="freight">快递&nbsp;&nbsp;免运费<label class="fr">销量&nbsp;&nbsp;3件</label></p></p>
+
+
+                    </li>
+
+
+                    <!--活动营销-->
+
+                    <li id="list_sku_li">
+                        <div id="list_sku" class="list_sku">
                             <!---->
                         </div>
+                    </li>
+
+                    <li id="list_sku_number">
+                        <table id="table_number" class="table_number">
+                            <tbody>
+                            <tr>
+                                <td>
+                                    <label style="white-space: pre;">数量</label>
+                                </td>
+                                <td>
+                                    <div class="box">
+                                        <div>
+                                            <input type="button" value="-"/>
+                                        </div>
+                                        <div>
+                                            <input type="number" value="1" id="sku_number">
+                                        </div>
+                                        <div>
+                                            <input type="button" value="+">
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="td_sku_inventory">
+                                    <label id="sku_inventory" class="sku_inventory">(库存93)</label>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+        <!--进入店铺-->
+        <div class="section_body link_to_shop">
+            <a href="/micro-shop/index" class="arrow">
+                <label>夏娃的秘密</label>
+                <label>进入店铺</label>
+            </a>
+        </div>
+        <!--参数&详情&评价-->
+        <div class="section_body info_detail">
+            <div>
+                <div id="div_nav_fixed">
+                    <div id="div_nav" class="div_nav">
+                        <ul class="box">
+                            <li>
+                                <a href="javascript:;" data-idx="0">商品属性</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;" data-idx="1" class="on">图文详情</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;" data-idx="2">评价</a>
+                            </li>
+                        </ul>
                     </div>
-                </section>
-            </div>
-        </header>
-        
-
-        <section data-role="body" class="body">
-            <!--基本信息-->
-            <div class="section_body info_basic">
-                <div>
-                    <ul>
-                        <li>
-                            <div class="tbox title_and_fav">
-                                <div id="label_title" class="title" style="width: 100%;">天蝎座-夜雾魅影</div>
-                                <div>
-                                    <div class="fav">
-                                        <span id="icon_fav1" class="icon_fav">&nbsp;</span>
-                                        <label>&nbsp;</label>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="tbox price_and_fav price_and_sale">
-                                <div>
-                                    <div class="price">
-                                        <p>
-                                            微信价：
-                                            <span id="label_price"></span>
-                                            
-                                        </p>
-                                        <p><span >原价：￥<span id="label_price_original"></span></span></p>
-                                    </div>
-                                </div>
-                            </div>
-                            <!--/li>
-							<li-->
-
-                            
-                            <p class="freight">快递&nbsp;&nbsp;免运费<label class="fr">销量&nbsp;&nbsp;3件</label></p></p>
-                            
-
-								
-                        </li>
-
-
-                        <!--活动营销-->
-                        
-                        <li id="list_sku_li">
-                            <div id="list_sku" class="list_sku">
-                                <!---->
-                            </div>
-                        </li>
-                        
-                        <li id="list_sku_number">
-                            <table id="table_number" class="table_number">
-                                <tbody>
-                                    <tr>
-                                        <td>
-                                            <label style="white-space: pre;">数量</label>
-                                        </td>
-                                        <td>
-                                            <div class="box">
-                                                <div>
-                                                    <input type="button" value="-" />
-                                                </div>
-                                                <div>
-                                                    <input type="number" value="1" id="sku_number">
-                                                </div>
-                                                <div>
-                                                    <input type="button" value="+">
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td class="td_sku_inventory">
-                                            <label id="sku_inventory" class="sku_inventory">(库存93)</label>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </li>
-                        
-                    </ul>
                 </div>
-            </div>
-            <!--进入店铺-->
-            <div class="section_body link_to_shop">
-                <a href="/vshop/index" class="arrow">
-                    <label>夏娃的秘密</label>
-                    <label>进入店铺</label>
-                </a>
-            </div>
-            <!--参数&详情&评价-->
-            <div class="section_body info_detail">
-                <div>
-                    <div id="div_nav_fixed">
-                        <div id="div_nav" class="div_nav">
-                            <ul class="box">
-                                <li>
-                                    <a href="javascript:;" data-idx="0">商品属性</a>
-                                </li>
-                                <li>
-                                    <a href="javascript:;" data-idx="1" class="on">图文详情</a>
-                                </li>
-                                <li>
-                                    <a href="javascript:;" data-idx="2">评价</a>
-                                </li>
+                <div id="div_sections" class="div_sections">
+                    <section class="section_specification">
+                        <dl>
+                            <div>
+
+                                <dd>
+                                    <label>品牌</label><label>夏娃的秘密</label></dd>
+
+                                <dd>
+                                    <label>适合季节</label><label>四季</label></dd>
+
+                                <dd>
+                                    <label>裤脚款式</label><label>T裤/丁字裤</label></dd>
+
+                                <dd>
+                                    <label>风格</label><label>蕾丝公主</label></dd>
+
+                                <dd>
+                                    <label>货号</label><label>ES0010006</label></dd>
+
+                                <dd>
+                                    <label>适用性别</label><label>女</label></dd>
+
+                                <dd>
+                                    <label>尺码</label><label>M S L</label></dd>
+
+                            </div>
+                        </dl>
+                    </section>
+                    <section class="section_detail on" data-role="widget" data-widget="img_prev_view">
+                        <img src="http://hs-net-shop-img.oss-cn-hangzhou.aliyuncs.com/308628/Group/1502081256321252.jpg"
+                             alt=""/><img
+                            src="http://hs-net-shop-img.oss-cn-hangzhou.aliyuncs.com/308628/Group/1502081256341573.jpg"
+                            alt=""/><img
+                            src="http://hs-net-shop-img.oss-cn-hangzhou.aliyuncs.com/308628/Group/1502081256348896.jpg"
+                            alt=""/><img
+                            src="http://hs-net-shop-img.oss-cn-hangzhou.aliyuncs.com/308628/Group/1502081256354621.jpg"
+                            alt=""/><img
+                            src="http://hs-net-shop-img.oss-cn-hangzhou.aliyuncs.com/308628/Group/1502081256363626.jpg"
+                            alt=""/><img
+                            src="http://hs-net-shop-img.oss-cn-hangzhou.aliyuncs.com/308628/Group/1502081256371737.jpg"
+                            alt=""/><img
+                            src="http://hs-net-shop-img.oss-cn-hangzhou.aliyuncs.com/308628/Group/1502081256374296.jpg"
+                            alt=""/><img
+                            src="http://hs-net-shop-img.oss-cn-hangzhou.aliyuncs.com/308628/Group/1502081256389158.jpg"
+                            alt=""/><img
+                            src="http://hs-net-shop-img.oss-cn-hangzhou.aliyuncs.com/308628/Group/1502081256407946.jpg"
+                            alt=""/><img
+                            src="http://hs-net-shop-img.oss-cn-hangzhou.aliyuncs.com/308628/Group/1502081256427642.jpg"
+                            alt=""/><img
+                            src="http://hs-net-shop-img.oss-cn-hangzhou.aliyuncs.com/308628/Group/1502081256450338.jpg"
+                            alt=""/><img
+                            src="http://hs-net-shop-img.oss-cn-hangzhou.aliyuncs.com/308628/Group/1502081256455426.jpg"
+                            alt=""/><img
+                            src="http://hs-net-shop-img.oss-cn-hangzhou.aliyuncs.com/308628/Group/1502081256459368.jpg"
+                            alt=""/><img
+                            src="http://hs-net-shop-img.oss-cn-hangzhou.aliyuncs.com/308628/Group/1502081256463587.jpg"
+                            alt=""/><img
+                            src="http://hs-net-shop-img.oss-cn-hangzhou.aliyuncs.com/308628/Group/1502081256466087.jpg"
+                            alt=""/><img
+                            src="http://hs-net-shop-img.oss-cn-hangzhou.aliyuncs.com/308628/Group/1502081256472337.jpg"
+                            alt=""/><img
+                            src="http://hs-net-shop-img.oss-cn-hangzhou.aliyuncs.com/308628/Group/1502081256477806.jpg"
+                            alt=""/><img
+                            src="http://hs-net-shop-img.oss-cn-hangzhou.aliyuncs.com/308628/Group/1502081256482024.jpg"
+                            alt=""/><img
+                            src="http://hs-net-shop-img.oss-cn-hangzhou.aliyuncs.com/308628/Group/1502081256489525.jpg"
+                            alt=""/><img
+                            src="http://hs-net-shop-img.oss-cn-hangzhou.aliyuncs.com/308628/Group/1502081257133750.jpg"
+                            alt=""/><img
+                            src="http://hs-net-shop-img.oss-cn-hangzhou.aliyuncs.com/308628/Group/1502081257138266.jpg"
+                            alt=""/><img
+                            src="http://hs-net-shop-img.oss-cn-hangzhou.aliyuncs.com/308628/Group/1502081257146094.jpg"
+                            alt=""/><img
+                            src="http://hs-net-shop-img.oss-cn-hangzhou.aliyuncs.com/308628/Group/1502081257147827.jpg"
+                            alt=""/>
+                    </section>
+                    <section class="section_comments">
+                        <div>
+                            <ul id="nav_comments" class="nav_comments box">
+                                <!---->
                             </ul>
                         </div>
-                    </div>
-                    <div id="div_sections" class="div_sections">
-                        <section class="section_specification">
-                            <dl>
-                                <div>
-                                    
-                                    <dd>
-                                        <label>品牌</label><label>夏娃的秘密</label></dd>
-                                    
-                                    <dd>
-                                        <label>适合季节</label><label>四季</label></dd>
-                                    
-                                    <dd>
-                                        <label>裤脚款式</label><label>T裤/丁字裤</label></dd>
-                                    
-                                    <dd>
-                                        <label>风格</label><label>蕾丝公主</label></dd>
-                                    
-                                    <dd>
-                                        <label>货号</label><label>ES0010006</label></dd>
-                                    
-                                    <dd>
-                                        <label>适用性别</label><label>女</label></dd>
-                                    
-                                    <dd>
-                                        <label>尺码</label><label>M S L</label></dd>
-                                    
-                                </div>
-                            </dl>
-                        </section>
-                        <section class="section_detail on" data-role="widget" data-widget="img_prev_view">
-                            <img src="http://hs-net-shop-img.oss-cn-hangzhou.aliyuncs.com/308628/Group/1502081256321252.jpg" alt="" /><img src="http://hs-net-shop-img.oss-cn-hangzhou.aliyuncs.com/308628/Group/1502081256341573.jpg" alt="" /><img src="http://hs-net-shop-img.oss-cn-hangzhou.aliyuncs.com/308628/Group/1502081256348896.jpg" alt="" /><img src="http://hs-net-shop-img.oss-cn-hangzhou.aliyuncs.com/308628/Group/1502081256354621.jpg" alt="" /><img src="http://hs-net-shop-img.oss-cn-hangzhou.aliyuncs.com/308628/Group/1502081256363626.jpg" alt="" /><img src="http://hs-net-shop-img.oss-cn-hangzhou.aliyuncs.com/308628/Group/1502081256371737.jpg" alt="" /><img src="http://hs-net-shop-img.oss-cn-hangzhou.aliyuncs.com/308628/Group/1502081256374296.jpg" alt="" /><img src="http://hs-net-shop-img.oss-cn-hangzhou.aliyuncs.com/308628/Group/1502081256389158.jpg" alt="" /><img src="http://hs-net-shop-img.oss-cn-hangzhou.aliyuncs.com/308628/Group/1502081256407946.jpg" alt="" /><img src="http://hs-net-shop-img.oss-cn-hangzhou.aliyuncs.com/308628/Group/1502081256427642.jpg" alt="" /><img src="http://hs-net-shop-img.oss-cn-hangzhou.aliyuncs.com/308628/Group/1502081256450338.jpg" alt="" /><img src="http://hs-net-shop-img.oss-cn-hangzhou.aliyuncs.com/308628/Group/1502081256455426.jpg" alt="" /><img src="http://hs-net-shop-img.oss-cn-hangzhou.aliyuncs.com/308628/Group/1502081256459368.jpg" alt="" /><img src="http://hs-net-shop-img.oss-cn-hangzhou.aliyuncs.com/308628/Group/1502081256463587.jpg" alt="" /><img src="http://hs-net-shop-img.oss-cn-hangzhou.aliyuncs.com/308628/Group/1502081256466087.jpg" alt="" /><img src="http://hs-net-shop-img.oss-cn-hangzhou.aliyuncs.com/308628/Group/1502081256472337.jpg" alt="" /><img src="http://hs-net-shop-img.oss-cn-hangzhou.aliyuncs.com/308628/Group/1502081256477806.jpg" alt="" /><img src="http://hs-net-shop-img.oss-cn-hangzhou.aliyuncs.com/308628/Group/1502081256482024.jpg" alt="" /><img src="http://hs-net-shop-img.oss-cn-hangzhou.aliyuncs.com/308628/Group/1502081256489525.jpg" alt="" /><img src="http://hs-net-shop-img.oss-cn-hangzhou.aliyuncs.com/308628/Group/1502081257133750.jpg" alt="" /><img src="http://hs-net-shop-img.oss-cn-hangzhou.aliyuncs.com/308628/Group/1502081257138266.jpg" alt="" /><img src="http://hs-net-shop-img.oss-cn-hangzhou.aliyuncs.com/308628/Group/1502081257146094.jpg" alt="" /><img src="http://hs-net-shop-img.oss-cn-hangzhou.aliyuncs.com/308628/Group/1502081257147827.jpg" alt="" />
-                        </section>
-                        <section class="section_comments">
-                            <div>
-                                <ul id="nav_comments" class="nav_comments box">
-                                    <!---->
-                                </ul>
-                            </div>
-                            <div id="list_comments">
-                                <ul id="list_comments_0" class="list_comments on">
-                                    <!---->
-                                </ul>
-                                <ul id="list_comments_1" class="list_comments">
-                                    <!---->
-                                </ul>
-                                <ul id="list_comments_2" class="list_comments">
-                                    <!---->
-                                </ul>
-                            </div>
-                        </section>
-                    </div>
+                        <div id="list_comments">
+                            <ul id="list_comments_0" class="list_comments on">
+                                <!---->
+                            </ul>
+                            <ul id="list_comments_1" class="list_comments">
+                                <!---->
+                            </ul>
+                            <ul id="list_comments_2" class="list_comments">
+                                <!---->
+                            </ul>
+                        </div>
+                    </section>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        
 
-        <footer data-role="footer">
-            
+    <footer data-role="footer">
 
-<div data-role="copyright">
-    
-    <div data-role="copyright" data-copyright="copyright1" class="copyright1">
-        <div class="widget_wrap">
-            <ul class="tbox">
-                
-                <li>
+
+        <div data-role="copyright">
+
+            <div data-role="copyright" data-copyright="copyright1" class="copyright1">
+                <div class="widget_wrap">
+                    <ul class="tbox">
+
+                        <li>
                     <span class="img_wrap">
-                        <img src="http://hs-net-shop-img.oss-cn-hangzhou.aliyuncs.com/308628/Group/1411011830315913.png" />
+                        <img src="http://hs-net-shop-img.oss-cn-hangzhou.aliyuncs.com/308628/Group/1411011830315913.png"/>
 
                     </span>
-                </li>
-                
+                        </li>
 
-                <li>
-                    <p class="box">
-                        <a href="http://308628.m.weimob.com/vshop/index">店铺首页</a>
-                        <a href="http://308628.m.weimob.com/vshop/UserCenter">会员中心</a>
-                        <a href="tel:021-65219708">联系我们</a>
-                    </p>
-                    <p>
-                        <a href="javascript:;">©夏娃的秘密官方商城</a>
-                    </p>
-                </li>
-            </ul>
-        </div>
-    </div>
-    
-    <script type="text/javascript" src="http://stc.weimob.com/src/st/share_channel.js?v=111111"></script>
-    <script>
-        var isGoodsDetial=0;//是否详情页
-        var APPShareLink = "http://308628.m.weimob.com/vshop/Goods/GoodsDetail3/166088?aid=308628";
-        var APPShareDes = '无情趣不生活';
-        var APPShareTitle = '夏娃的秘密';
-        var APPShareimg = 'http://hs-net-shop-img.oss-cn-hangzhou.aliyuncs.com/308628/Group/1411011832384713.jpg';
-        var APPShareTitleId = "";
-        var APPShareDesId = "";
-        var APPSharehidDesId = "";
-        var APPShareimgId = "";
 
-        var FriendShareLink = "http://308628.m.weimob.com/vshop/Goods/GoodsDetail3/166088?aid=308628";
-        var FriendShareDes = '无情趣不生活';
-        var FriendShareTitle = '夏娃的秘密';
-        var FriendShareimg = 'http://hs-net-shop-img.oss-cn-hangzhou.aliyuncs.com/308628/Group/1411011832384713.jpg';
-        var FriendShareDesId = '';
-        var FriendShareTitleId = '';
-        var FriendSharehidTitleId = '';
-        var FriendShareimgId = '';
+                        <li>
+                            <p class="box">
+                                <a href="http://308628.m.weimob.com/micro-shop/index">店铺首页</a>
+                                <a href="http://308628.m.weimob.com/micro-shop/UserCenter">会员中心</a>
+                                <a href="tel:021-65219708">联系我们</a>
+                            </p>
 
-        var WeiboShareimg = 'http://hs-net-shop-img.oss-cn-hangzhou.aliyuncs.com/308628/Group/1411011832384713.jpg';
-        var WeiboShareDes = '无情趣不生活';
-        var WeiboShareimgId = "";
-        var WeiboShareDesId = '';
-        document.title = '夏娃的秘密';
-
-        var ShareSDAgentId = -1;
-        var ShareAgentId = -1;
-        var ShareEmployeesId = -1;
-        var ShareVKId = -1;
-
-        document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
-            var imgs = $("img");
-            var img = "";
-            if (imgs && imgs.length > 0 && imgs[0]) {
-                img = $(imgs[0]).attr("src");
-            }
-            // 发送给好友
-            WeixinJSBridge.on('menu:share:appmessage', function (argv) {
-                var thisimg = APPShareimg;
-                if (thisimg == "" && APPShareimgId != "") {
-                    thisimg = $("#" + APPShareimgId).val();
-                }
-                if (thisimg == "") {
-                    thisimg = img;
-                }
-                var thislink = APPShareLink;
-                var thisTitle = APPShareTitle;
-                if (thisTitle == "" && APPShareTitleId != "") {
-                    thisTitle = $("#" + APPShareTitleId).val();
-                }
-                var thisDes = APPShareDes;
-                if (thisDes == "" && APPShareDesId != "") {
-                    thisDes = $("#" + APPShareDesId).val();
-                }
-                if (thisDes == "" && APPSharehidDesId != "") {
-                    thisDes = $("#" + APPSharehidDesId).val();
-                }
-                if (thisDes == "") {
-                    thisDes = thisTitle;
-                }
-                thislink = channelHandle(thislink, "f");
-                WeixinJSBridge.invoke('sendAppMessage', {
-                    "img_url": thisimg,
-                    "img_width": "640",
-                    "img_height": "640",
-                    "link": thislink,
-                    "desc": (isGoodsDetial==1?("来自微信好店："+"夏娃的秘密"):thisDes),
-                    "title": ((isGoodsDetial==0?"推荐一家好店：":"")+ thisTitle)
-                    
-                }, function (res) {
-                    if ('send_app_msg:cancel' != res.err_msg) {
-                        if (APP && APP.page && APP.page == "detail" && ShareVKId > 0) {
-                            var sdagentid = 0;
-                            if(ShareSDAgentId > 0){
-                                sdagentid = ShareSDAgentId;
-                            }
-                            var agentid = 0;
-                            if(ShareAgentId > 0){
-                                agentid = ShareAgentId;
-                            }
-                            ShareGoods(308628,APP.goodsId,sdagentid,agentid,ShareVKId);
-                        }
-                    }
-                    _report('send_msg', res.err_msg);
-                })
-            });
-
-            // 分享到朋友圈
-            WeixinJSBridge.on('menu:share:timeline', function (argv) {
-                var thisimg = FriendShareimg;
-                if (thisimg == "") {
-                    thisimg = $("#" + FriendShareimgId).val();
-                }
-                if (thisimg == "") {
-                    thisimg = img;
-                }
-                var thislink = FriendShareLink;
-                var thisTitle = FriendShareTitle;
-                if (thisTitle == "" && FriendShareTitleId != "") {
-                    thisTitle = $("#" + FriendShareTitleId).val();
-                }
-                if (thisTitle == "" && FriendSharehidTitleId != "") {
-                    thisTitle = $("#" + FriendSharehidTitleId).val();
-                }
-                var thisDes = FriendShareDes;
-                if (thisDes == "" && FriendShareDesId != "") {
-                    thisDes = $("#" + FriendShareDesId).val();
-                }
-                if (thisDes == "") {
-                    thisDes = thisTitle;
-                }
-                thislink = channelHandle(thislink, "fc");
-                WeixinJSBridge.invoke('shareTimeline', {
-                    "img_url": thisimg,
-                    "img_width": "640",
-                    "img_height": "640",
-                    "link": thislink,
-                    "desc": (isGoodsDetial==1?"推荐一家好店："+"夏娃的秘密":thisTitle ),
-                    "title":((isGoodsDetial==0?"推荐一家好店：":"")+ thisTitle)
-                }, function (res) {
-                    if ('share_timeline:cancel' != res.err_msg) {
-                        //如果用户没有取消
-                        if (APP && APP.page && APP.page == "detail" && ShareVKId > 0) {
-                            var sdagentid = 0;
-                            if(ShareSDAgentId > 0){
-                                sdagentid = ShareSDAgentId;
-                            }
-                            var agentid = 0;
-                            if(ShareAgentId > 0){
-                                agentid = ShareAgentId;
-                            }
-                            ShareGoods(308628,APP.goodsId,sdagentid,agentid,ShareVKId);
-                        }
-                    }
-                    _report('timeline', res.err_msg);
-                });
-            });
-
-            // 分享到微博
-            WeixinJSBridge.on('menu:share:weibo', function (argv) {
-                var thisimg = WeiboShareimg;
-                if (thisimg == "" && WeiboShareimgId != "") {
-                    thisimg = $("#" + WeiboShareimgId).val();
-                }
-                if (thisimg == "") {
-                    thisimg = img;
-                }
-                var thisDes = WeiboShareDes;
-                if (thisDes == "" && WeiboShareDesId != "") {
-                    thisDes = $("#" + WeiboShareDesId).val();
-                }
-                WeixinJSBridge.invoke('shareWeibo', {
-                    "content": thisDes,
-                    "url": thisimg
-                }, function (res) {
-                    if ('share_weibo:cancel' != res.err_msg) {
-                        //weimobAfterShare("", window.shareData.weiboLink, 'weibo');
-                    }
-                    _report('weibo', res.err_msg);
-                });
-            });
-        }, false);
-
-        function ShareGoods(AId, goodsId, sdagentid, agentid, VKId){
-            $.ajax({
-                type: "POST",
-                url: "/vshop/Ajax/CopyRightAjax/Share",
-                data: {
-                    aid:AId,
-                    gid:goodsId,
-                    sdagentid:sdagentid,
-                    agentid:agentid,
-                    vkid:VKId
-                },
-                async: true,
-                success: function (res) {
-                                   
-                }, dataType: "json"
-            });
-        }
-
-    </script>
-    
-    <script type="text/javascript">
-        setCookie("stat_pid", "308628");
-        setCookie("stat_bid", "479772");
-        try {
-            if (APP.openid || openid) {
-                setCookie("stat_openid", APP.openid || openid);
-                setCookie("stat_webtype", stat_webtype);
-            }
-	    
-        }
-        catch (e) { }
-        setCookie("stat_webtype", stat_webtype);
-        setCookie("stat_module", "vshop");
-        function setCookie(name, value) {
-            var Days = 30;
-            var exp = new Date();
-            exp.setTime(exp.getTime() + Days * 24 * 60 * 60 * 1000);
-            document.cookie = name + "=" + escape(value) + ";expires=" + exp.toGMTString()+";path=/";
-        }
-    </script>
-    <script type="text/javascript" src="http://stc.weimob.com/src/st/base64.js?v=10101010"></script>
-    <script type="text/javascript" src="http://stc.weimob.com/src/st/st.js?v=10101010"></script>
-    <script type="text/javascript">
-        //dev
-        //statisticServerPath:http://121.42.10.197
-        //online:
-        //statisticServerPath:http://statistic.weimob.com
-
-        var statisticServerPath = "http://statistic.weimob.com";
-        st.push("_triggerEvent", {
-            "is_statistic_on": "on", //开关
-            "statisticServerPath": statisticServerPath + "/wm.js", //统计地址
-            "memcServerPath": statisticServerPath + "/memc?cmd=get", //缓存地址
-            "stat_action": "loadPage",  //统计动作类型
-            "stat_optValue": ""    //参数值
-        });
-    </script>
-</div>
-
-            <!---->
-            <div data-role="widget" data-widget="btip_widget" class="btip_widget hidden" id="btip_widget">
-                <div class="widget_wrap">
-                    <label id="btip_label" class="btip_label">该商品最多可购买2件</label>
-                </div>
-            </div>
-            
-            <!---->
-            
-            <div data-role="widget" data-widget="">
-                <div class="widget_wrap">
-                    <ul class="fixed_btn">
-                        <ol id="fixed_btn" class="tbox" style="position: fixed;">
-                            <li>
-                                <div style="width: 105px">
-                                    <a href="javascript:;" id="btn_add_fav" class="btn_add btn_add_fav">&nbsp;</a>
-                                    <a href="javascript:;" id="btn_link_shopcart" class="btn_add btn_add_shopcart" data-count="0">&nbsp;</a>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="box">
-                                    <div>
-                                        <a href="javascript:;" id="btn_add_shopcart" class="btn"><label>加入购物车</label></a>
-                                    </div>
-                                    <div>
-                                        <a href="javascript:;" id="btn_buy" class="btn red"><label>立刻购买</label></a>
-                                    </div>
-                                </div>
-                            </li>
-                        </ol>
+                            <p>
+                                <a href="javascript:;">©夏娃的秘密官方商城</a>
+                            </p>
+                        </li>
                     </ul>
                 </div>
             </div>
-            
-        </footer>
-    </div>
-    <form id="form1" method="post" action="/vshop/Order/CreateOrder">
-        <input type="hidden" id="product" name="data" />
-    </form>
+
+            <script type="text/javascript" src="http://stc.weimob.com/src/st/share_channel.js?v=111111"></script>
+            <script>
+                var isGoodsDetial = 0;//是否详情页
+                var APPShareLink = "http://308628.m.weimob.com/micro-shop/Goods/GoodsDetail3/166088?aid=308628";
+                var APPShareDes = '无情趣不生活';
+                var APPShareTitle = '夏娃的秘密';
+                var APPShareimg = 'http://hs-net-shop-img.oss-cn-hangzhou.aliyuncs.com/308628/Group/1411011832384713.jpg';
+                var APPShareTitleId = "";
+                var APPShareDesId = "";
+                var APPSharehidDesId = "";
+                var APPShareimgId = "";
+
+                var FriendShareLink = "http://308628.m.weimob.com/micro-shop/Goods/GoodsDetail3/166088?aid=308628";
+                var FriendShareDes = '无情趣不生活';
+                var FriendShareTitle = '夏娃的秘密';
+                var FriendShareimg = 'http://hs-net-shop-img.oss-cn-hangzhou.aliyuncs.com/308628/Group/1411011832384713.jpg';
+                var FriendShareDesId = '';
+                var FriendShareTitleId = '';
+                var FriendSharehidTitleId = '';
+                var FriendShareimgId = '';
+
+                var WeiboShareimg = 'http://hs-net-shop-img.oss-cn-hangzhou.aliyuncs.com/308628/Group/1411011832384713.jpg';
+                var WeiboShareDes = '无情趣不生活';
+                var WeiboShareimgId = "";
+                var WeiboShareDesId = '';
+                document.title = '夏娃的秘密';
+
+                var ShareSDAgentId = -1;
+                var ShareAgentId = -1;
+                var ShareEmployeesId = -1;
+                var ShareVKId = -1;
+
+                document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+                    var imgs = $("img");
+                    var img = "";
+                    if (imgs && imgs.length > 0 && imgs[0]) {
+                        img = $(imgs[0]).attr("src");
+                    }
+                    // 发送给好友
+                    WeixinJSBridge.on('menu:share:appmessage', function (argv) {
+                        var thisimg = APPShareimg;
+                        if (thisimg == "" && APPShareimgId != "") {
+                            thisimg = $("#" + APPShareimgId).val();
+                        }
+                        if (thisimg == "") {
+                            thisimg = img;
+                        }
+                        var thislink = APPShareLink;
+                        var thisTitle = APPShareTitle;
+                        if (thisTitle == "" && APPShareTitleId != "") {
+                            thisTitle = $("#" + APPShareTitleId).val();
+                        }
+                        var thisDes = APPShareDes;
+                        if (thisDes == "" && APPShareDesId != "") {
+                            thisDes = $("#" + APPShareDesId).val();
+                        }
+                        if (thisDes == "" && APPSharehidDesId != "") {
+                            thisDes = $("#" + APPSharehidDesId).val();
+                        }
+                        if (thisDes == "") {
+                            thisDes = thisTitle;
+                        }
+                        thislink = channelHandle(thislink, "f");
+                        WeixinJSBridge.invoke('sendAppMessage', {
+                            "img_url": thisimg,
+                            "img_width": "640",
+                            "img_height": "640",
+                            "link": thislink,
+                            "desc": (isGoodsDetial == 1 ? ("来自微信好店：" + "夏娃的秘密") : thisDes),
+                            "title": ((isGoodsDetial == 0 ? "推荐一家好店：" : "") + thisTitle)
+
+                        }, function (res) {
+                            if ('send_app_msg:cancel' != res.err_msg) {
+                                if (APP && APP.page && APP.page == "detail" && ShareVKId > 0) {
+                                    var sdagentid = 0;
+                                    if (ShareSDAgentId > 0) {
+                                        sdagentid = ShareSDAgentId;
+                                    }
+                                    var agentid = 0;
+                                    if (ShareAgentId > 0) {
+                                        agentid = ShareAgentId;
+                                    }
+                                    ShareGoods(308628, APP.goodsId, sdagentid, agentid, ShareVKId);
+                                }
+                            }
+                            _report('send_msg', res.err_msg);
+                        })
+                    });
+
+                    // 分享到朋友圈
+                    WeixinJSBridge.on('menu:share:timeline', function (argv) {
+                        var thisimg = FriendShareimg;
+                        if (thisimg == "") {
+                            thisimg = $("#" + FriendShareimgId).val();
+                        }
+                        if (thisimg == "") {
+                            thisimg = img;
+                        }
+                        var thislink = FriendShareLink;
+                        var thisTitle = FriendShareTitle;
+                        if (thisTitle == "" && FriendShareTitleId != "") {
+                            thisTitle = $("#" + FriendShareTitleId).val();
+                        }
+                        if (thisTitle == "" && FriendSharehidTitleId != "") {
+                            thisTitle = $("#" + FriendSharehidTitleId).val();
+                        }
+                        var thisDes = FriendShareDes;
+                        if (thisDes == "" && FriendShareDesId != "") {
+                            thisDes = $("#" + FriendShareDesId).val();
+                        }
+                        if (thisDes == "") {
+                            thisDes = thisTitle;
+                        }
+                        thislink = channelHandle(thislink, "fc");
+                        WeixinJSBridge.invoke('shareTimeline', {
+                            "img_url": thisimg,
+                            "img_width": "640",
+                            "img_height": "640",
+                            "link": thislink,
+                            "desc": (isGoodsDetial == 1 ? "推荐一家好店：" + "夏娃的秘密" : thisTitle ),
+                            "title": ((isGoodsDetial == 0 ? "推荐一家好店：" : "") + thisTitle)
+                        }, function (res) {
+                            if ('share_timeline:cancel' != res.err_msg) {
+                                //如果用户没有取消
+                                if (APP && APP.page && APP.page == "detail" && ShareVKId > 0) {
+                                    var sdagentid = 0;
+                                    if (ShareSDAgentId > 0) {
+                                        sdagentid = ShareSDAgentId;
+                                    }
+                                    var agentid = 0;
+                                    if (ShareAgentId > 0) {
+                                        agentid = ShareAgentId;
+                                    }
+                                    ShareGoods(308628, APP.goodsId, sdagentid, agentid, ShareVKId);
+                                }
+                            }
+                            _report('timeline', res.err_msg);
+                        });
+                    });
+
+                    // 分享到微博
+                    WeixinJSBridge.on('menu:share:weibo', function (argv) {
+                        var thisimg = WeiboShareimg;
+                        if (thisimg == "" && WeiboShareimgId != "") {
+                            thisimg = $("#" + WeiboShareimgId).val();
+                        }
+                        if (thisimg == "") {
+                            thisimg = img;
+                        }
+                        var thisDes = WeiboShareDes;
+                        if (thisDes == "" && WeiboShareDesId != "") {
+                            thisDes = $("#" + WeiboShareDesId).val();
+                        }
+                        WeixinJSBridge.invoke('shareWeibo', {
+                            "content": thisDes,
+                            "url": thisimg
+                        }, function (res) {
+                            if ('share_weibo:cancel' != res.err_msg) {
+                                //weimobAfterShare("", window.shareData.weiboLink, 'weibo');
+                            }
+                            _report('weibo', res.err_msg);
+                        });
+                    });
+                }, false);
+
+                function ShareGoods(AId, goodsId, sdagentid, agentid, VKId) {
+                    $.ajax({
+                        type: "POST",
+                        url: "/micro-shop/Ajax/CopyRightAjax/Share",
+                        data: {
+                            aid: AId,
+                            gid: goodsId,
+                            sdagentid: sdagentid,
+                            agentid: agentid,
+                            vkid: VKId
+                        },
+                        async: true,
+                        success: function (res) {
+
+                        }, dataType: "json"
+                    });
+                }
+
+            </script>
+
+            <script type="text/javascript">
+                setCookie("stat_pid", "308628");
+                setCookie("stat_bid", "479772");
+                try {
+                    if (APP.openid || openid) {
+                        setCookie("stat_openid", APP.openid || openid);
+                        setCookie("stat_webtype", stat_webtype);
+                    }
+
+                }
+                catch (e) {
+                }
+                setCookie("stat_webtype", stat_webtype);
+                setCookie("stat_module", "micro-shop");
+                function setCookie(name, value) {
+                    var Days = 30;
+                    var exp = new Date();
+                    exp.setTime(exp.getTime() + Days * 24 * 60 * 60 * 1000);
+                    document.cookie = name + "=" + escape(value) + ";expires=" + exp.toGMTString() + ";path=/";
+                }
+            </script>
+            <script type="text/javascript" src="http://stc.weimob.com/src/st/base64.js?v=10101010"></script>
+            <script type="text/javascript" src="http://stc.weimob.com/src/st/st.js?v=10101010"></script>
+            <script type="text/javascript">
+                //dev
+                //statisticServerPath:http://121.42.10.197
+                //online:
+                //statisticServerPath:http://statistic.weimob.com
+
+                var statisticServerPath = "http://statistic.weimob.com";
+                st.push("_triggerEvent", {
+                    "is_statistic_on": "on", //开关
+                    "statisticServerPath": statisticServerPath + "/wm.js", //统计地址
+                    "memcServerPath": statisticServerPath + "/memc?cmd=get", //缓存地址
+                    "stat_action": "loadPage",  //统计动作类型
+                    "stat_optValue": ""    //参数值
+                });
+            </script>
+        </div>
+
+        <!---->
+        <div data-role="widget" data-widget="btip_widget" class="btip_widget hidden" id="btip_widget">
+            <div class="widget_wrap">
+                <label id="btip_label" class="btip_label">该商品最多可购买2件</label>
+            </div>
+        </div>
+
+        <!---->
+
+        <div data-role="widget" data-widget="">
+            <div class="widget_wrap">
+                <ul class="fixed_btn">
+                    <ol id="fixed_btn" class="tbox" style="position: fixed;">
+                        <li>
+                            <div style="width: 105px">
+                                <a href="javascript:;" id="btn_add_fav" class="btn_add btn_add_fav">&nbsp;</a>
+                                <a href="javascript:;" id="btn_link_shopcart" class="btn_add btn_add_shopcart"
+                                   data-count="0">&nbsp;</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="box">
+                                <div>
+                                    <a href="javascript:;" id="btn_add_shopcart" class="btn"><label>加入购物车</label></a>
+                                </div>
+                                <div>
+                                    <a href="javascript:;" id="btn_buy" class="btn red"><label>立刻购买</label></a>
+                                </div>
+                            </div>
+                        </li>
+                    </ol>
+                </ul>
+            </div>
+        </div>
+
+    </footer>
+</div>
+<form id="form1" method="post" action="/micro-shop/Order/CreateOrder">
+    <input type="hidden" id="product" name="data"/>
+</form>
 </body>
 </html>
 
 <script>
 
 
-    isGoodsDetial=1;
+    isGoodsDetial = 1;
     APPShareTitle = "天蝎座-夜雾魅影";
     FriendShareTitle = "天蝎座-夜雾魅影";
 
@@ -600,7 +661,7 @@
     APPShareDes = "天蝎座-夜雾魅影";
     FriendShareDes = "天蝎座-夜雾魅影";
     WeiboShareDes = "天蝎座-夜雾魅影";
-    
+
 
     document.title = APPShareTitle;
 </script>

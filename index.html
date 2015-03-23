@@ -34,8 +34,8 @@
                 type:"",
                 friendImgUrl:""
             },
-            limit:{val:0, name:'\u590f\u5a03\u7684\u79d8\u5bc6'}, //val: 1-ֻ�����˿����
-            isopenfasbuy:false,//�Ƿ�����˿��������
+            limit:{val:0, name:'\u590f\u5a03\u7684\u79d8\u5bc6'}, //val: 1-只允许粉丝购买
+            isopenfasbuy:false,//是否开启粉丝购买限制
             AId: 308628,
             shareInfo:{followUrl:""},
             AgentId:"",
@@ -53,16 +53,15 @@
     <script>
         (function(l){
             seajs.config({
-//                base: "/js/",
+//                base: "/vshop/Assets/",
                 map:[
                     [".js", (l&&l[1]||"")+".js?v=044"]
                 ]
             });
-		   
-            define("js_cmd/home", ["lib_cmd/zepto", "lib_cmd/dialog"], function(require, exports, module){
+
+            define("js_cmd/home", ["lib_cmd/zepto", "lib_cmd/myDialog"], function(require, exports, module){
                 var $ = require("lib_cmd/zepto"),
-                    myDialog = require("lib_cmd/dialog");
-                debugger;
+                        myDialog = require("lib_cmd/myDialog");
                 window.$ = $;
                 $.ajax({
                     type: "POST",
@@ -92,14 +91,14 @@
                                     }
                                 }
                             });
-                            if(res.Data.type=="40")//΢����
+                            if(res.Data.type=="40")//微客引导
                             {
-                                APP.shareInfo.followUrl = res.Data.shareInfoUrl;//��ͨ΢����
-                                APP.shareInfo.content=res.Data.content;//����
+                                APP.shareInfo.followUrl = res.Data.shareInfoUrl;//开通微客引导
+                                APP.shareInfo.content=res.Data.content;//内容
                                 APP.shareInfo.type=res.Data.type;//
                                 APP.shareInfo.friendImgUrl=res.Data.wimgurl;
                             }
-		                        
+
                             setCookie("stat_openid", openid);
                             setCookie("stat_webtype", "index");
                         }
@@ -118,971 +117,971 @@
     </script>
 </head>
 <body onselectstart="return true;" ondragstart="return false;">
-    <div data-role="container" class="container home">
-        
-        <header data-role="header">
-            
-        </header>
-        <section data-role="body" class="body">
-            
-                <div data-role="widget" data-widget="slider_1_193766" class="slider_1">
-					<section class="widget_wrap">
-						<div id="slider_1_wrap_193766" class="slider_1_wrap">
-							<ul >
-                                
-                                        <li>
-                                             <a data-fx="Modulefx" href="javascript:;">
-										        <img style="max-height:340px;" src="http://shopimg.weimob.com/308628/Group/1503061732511287.jpg" />
-									        </a>
-                                            
-								        </li>
-                                        		
-							</ul>
-							<div id="slider_1_indicate_193766" class="slider_1_indicate"></div>
-						</div>
-					</section>
-					<script type="text/javascript">
-					    var slider_1 = (function () {
-					        var that = {};
-					        that.initSlider = function () {
-					            that.slider = new Swipe(document.getElementById('slider_1_wrap_193766'), {
-					                speed: 500,
-					                loop: true,
-                                    auto:3000,
-                                    indicate: "#slider_1_indicate_193766"
-					            });
-					            return that;
-					        }
-					        return that;
-					    })().initSlider();
-					</script>
-				</div>
-            
-<div data-role="widget" data-widget="search_2" class="search_2">
-    <div class="widget_wrap">
-        <div>
-            <a href="/vshop/Goods/GoodsSearch" class="input_wrap">
-                <input type="search" readonly="readonly" required="required" />
-            </a>
+<div data-role="container" class="container home">
+
+    <header data-role="header">
+
+    </header>
+    <section data-role="body" class="body">
+
+        <div data-role="widget" data-widget="slider_1_193766" class="slider_1">
+            <section class="widget_wrap">
+                <div id="slider_1_wrap_193766" class="slider_1_wrap">
+                    <ul >
+
+                        <li>
+                            <a data-fx="Modulefx" href="javascript:;">
+                                <img style="max-height:340px;" src="http://shopimg.weimob.com/308628/Group/1503061732511287.jpg" />
+                            </a>
+
+                        </li>
+
+                    </ul>
+                    <div id="slider_1_indicate_193766" class="slider_1_indicate"></div>
+                </div>
+            </section>
+            <script type="text/javascript">
+                var slider_1 = (function () {
+                    var that = {};
+                    that.initSlider = function () {
+                        that.slider = new Swipe(document.getElementById('slider_1_wrap_193766'), {
+                            speed: 500,
+                            loop: true,
+                            auto:3000,
+                            indicate: "#slider_1_indicate_193766"
+                        });
+                        return that;
+                    }
+                    return that;
+                })().initSlider();
+            </script>
         </div>
-    </div>
-</div>
+
+        <div data-role="widget" data-widget="search_2" class="search_2">
+            <div class="widget_wrap">
+                <div>
+                    <a href="/vshop/Goods/GoodsSearch" class="input_wrap">
+                        <input type="search" readonly="readonly" required="required" />
+                    </a>
+                </div>
+            </div>
+        </div>
 
 
-<div data-role="widget" data-widget="title_3" class="title_3">
-    <div class="widget_wrap">
-        
-        <label>
-            <p>���˽�����ϵ��</p>
+        <div data-role="widget" data-widget="title_3" class="title_3">
+            <div class="widget_wrap">
 
-        </label>
-        
-    </div>
-</div>
+                <label>
+                    <p>情人节星座系列</p>
 
-<div data-role="widget" data-widget="goodsList_1" class="goodsList_1">
-    <div class="widget_wrap">
-        <ul>
-            
-            <li>
-                <a href="/vshop/Goods/GoodsDetail3/166088">
-                    <div>
-                        <img src="http://shopimg.weimob.com/308628/Goods/1502081255381328.jpg@0e_320w_320h_0c_0i_0o_90Q_1x.src" />
-                        
-                        <span name="goodsdetailspan" class="tag">��Ы��</span>
-                        
-                    </div>
-                    <div>
-                        <p class="title">��Ы��-ҹ����Ӱ</p>
-                        <label class="price">��520.00</label>
-                    </div>
-                </a>
-            </li>
-            
-            <li>
-                <a href="/vshop/Goods/GoodsDetail3/166087">
-                    <div>
-                        <img src="http://shopimg.weimob.com/308628/Goods/1502081248256561.jpg@0e_320w_320h_0c_0i_0o_90Q_1x.src" />
-                        
-                        <span name="goodsdetailspan" class="tag">˫����</span>
-                        
-                    </div>
-                    <div>
-                        <p class="title">˫����-�����ǿ�</p>
-                        <label class="price">��520.00</label>
-                    </div>
-                </a>
-            </li>
-            
-        </ul>
-    </div>
-</div>
+                </label>
 
-<div data-role="widget" data-widget="goodsList_1" class="goodsList_1">
-    <div class="widget_wrap">
-        <ul>
-            
-            <li>
-                <a href="/vshop/Goods/GoodsDetail3/166086">
-                    <div>
-                        <img src="http://shopimg.weimob.com/308628/Goods/1502081243162431.jpg@0e_320w_320h_0c_0i_0o_90Q_1x.src" />
-                        
-                        <span name="goodsdetailspan" class="tag">˫����</span>
-                        
-                    </div>
-                    <div>
-                        <p class="title">˫����-��������</p>
-                        <label class="price">��520.00</label>
-                    </div>
-                </a>
-            </li>
-            
-            <li>
-                <a href="/vshop/Goods/GoodsDetail3/166085">
-                    <div>
-                        <img src="http://shopimg.weimob.com/308628/Goods/1502081238319952.jpg@0e_320w_320h_0c_0i_0o_90Q_1x.src" />
-                        
-                        <span name="goodsdetailspan" class="tag">Ħ����</span>
-                        
-                    </div>
-                    <div>
-                        <p class="title">Ħ����-��ˮ����</p>
-                        <label class="price">��999.00</label>
-                    </div>
-                </a>
-            </li>
-            
-        </ul>
-    </div>
-</div>
+            </div>
+        </div>
 
-<div data-role="widget" data-widget="goodsList_1" class="goodsList_1">
-    <div class="widget_wrap">
-        <ul>
-            
-            <li>
-                <a href="/vshop/Goods/GoodsDetail3/166084">
-                    <div>
-                        <img src="http://shopimg.weimob.com/308628/Goods/1502081232599041.jpg@0e_320w_320h_0c_0i_0o_90Q_1x.src" />
-                        
-                        <span name="goodsdetailspan" class="tag">ˮƿ��</span>
-                        
-                    </div>
-                    <div>
-                        <p class="title">ˮƿ��-ʥŮ֮��</p>
-                        <label class="price">��520.00</label>
-                    </div>
-                </a>
-            </li>
-            
-            <li>
-                <a href="/vshop/Goods/GoodsDetail3/166083">
-                    <div>
-                        <img src="http://shopimg.weimob.com/308628/Goods/1502081227145901.jpg@0e_320w_320h_0c_0i_0o_90Q_1x.src" />
-                        
-                        <span name="goodsdetailspan" class="tag">������</span>
-                        
-                    </div>
-                    <div>
-                        <p class="title">������-�����ջ�</p>
-                        <label class="price">��520.00</label>
-                    </div>
-                </a>
-            </li>
-            
-        </ul>
-    </div>
-</div>
+        <div data-role="widget" data-widget="goodsList_1" class="goodsList_1">
+            <div class="widget_wrap">
+                <ul>
 
-<div data-role="widget" data-widget="goodsList_1" class="goodsList_1">
-    <div class="widget_wrap">
-        <ul>
-            
-            <li>
-                <a href="/vshop/Goods/GoodsDetail3/166082">
-                    <div>
-                        <img src="http://shopimg.weimob.com/308628/Goods/1502081221463186.jpg@0e_320w_320h_0c_0i_0o_90Q_1x.src" />
-                        
-                        <span name="goodsdetailspan" class="tag">ʨ����</span>
-                        
-                    </div>
-                    <div>
-                        <p class="title">ʨ����-�������</p>
-                        <label class="price">��999.00</label>
-                    </div>
-                </a>
-            </li>
-            
-            <li>
-                <a href="/vshop/Goods/GoodsDetail3/166081">
-                    <div>
-                        <img src="http://shopimg.weimob.com/308628/Goods/1502081215344607.jpg@0e_320w_320h_0c_0i_0o_90Q_1x.src" />
-                        
-                        <span name="goodsdetailspan" class="tag">������</span>
-                        
-                    </div>
-                    <div>
-                        <p class="title">������-ȼ���Ⱥ�</p>
-                        <label class="price">��520.00</label>
-                    </div>
-                </a>
-            </li>
-            
-        </ul>
-    </div>
-</div>
+                    <li>
+                        <a href="/vshop/Goods/GoodsDetail3/166088">
+                            <div>
+                                <img src="http://shopimg.weimob.com/308628/Goods/1502081255381328.jpg@0e_320w_320h_0c_0i_0o_90Q_1x.src" />
 
-<div data-role="widget" data-widget="goodsList_1" class="goodsList_1">
-    <div class="widget_wrap">
-        <ul>
-            
-            <li>
-                <a href="/vshop/Goods/GoodsDetail3/166080">
-                    <div>
-                        <img src="http://shopimg.weimob.com/308628/Goods/1502081209312157.jpg@0e_320w_320h_0c_0i_0o_90Q_1x.src" />
-                        
-                        <span name="goodsdetailspan" class="tag">�����</span>
-                        
-                    </div>
-                    <div>
-                        <p class="title">�����-��������</p>
-                        <label class="price">��520.00</label>
-                    </div>
-                </a>
-            </li>
-            
-            <li>
-                <a href="/vshop/Goods/GoodsDetail3/166079">
-                    <div>
-                        <img src="http://shopimg.weimob.com/308628/Goods/1502081203132680.jpg@0e_320w_320h_0c_0i_0o_90Q_1x.src" />
-                        
+                                <span name="goodsdetailspan" class="tag">天蝎座</span>
 
-                        
-                    </div>
-                    <div>
-                        <p class="title">��ţ��-�������</p>
-                        <label class="price">��520.00</label>
-                    </div>
-                </a>
-            </li>
-            
-        </ul>
-    </div>
-</div>
+                            </div>
+                            <div>
+                                <p class="title">天蝎座-夜雾魅影</p>
+                                <label class="price">￥520.00</label>
+                            </div>
+                        </a>
+                    </li>
 
-<div data-role="widget" data-widget="goodsList_1" class="goodsList_1">
-    <div class="widget_wrap">
-        <ul>
-            
-            <li>
-                <a href="/vshop/Goods/GoodsDetail3/166078">
-                    <div>
-                        <img src="http://shopimg.weimob.com/308628/Goods/1502081156231834.jpg@0e_320w_320h_0c_0i_0o_90Q_1x.src" />
-                        
-                        <span name="goodsdetailspan" class="tag">��Ů��</span>
-                        
-                    </div>
-                    <div>
-                        <p class="title">��Ů��-����ӳ��</p>
-                        <label class="price">��520.00</label>
-                    </div>
-                </a>
-            </li>
-            
-            <li>
-                <a href="/vshop/Goods/GoodsDetail3/166076">
-                    <div>
-                        <img src="http://shopimg.weimob.com/308628/Goods/1502081148410208.jpg@0e_320w_320h_0c_0i_0o_90Q_1x.src" />
-                        
-                        <span name="goodsdetailspan" class="tag">��з��</span>
-                        
-                    </div>
-                    <div>
-                        <p class="title">��з��-SSͬ��</p>
-                        <label class="price">��1314.00</label>
-                    </div>
-                </a>
-            </li>
-            
-        </ul>
-    </div>
-</div>
+                    <li>
+                        <a href="/vshop/Goods/GoodsDetail3/166087">
+                            <div>
+                                <img src="http://shopimg.weimob.com/308628/Goods/1502081248256561.jpg@0e_320w_320h_0c_0i_0o_90Q_1x.src" />
 
+                                <span name="goodsdetailspan" class="tag">双子座</span>
 
-<div data-role="widget" data-widget="title_3" class="title_3">
-    <div class="widget_wrap">
-        
-        <label>
-            <p>��Ʒ�׷�</p>
+                            </div>
+                            <div>
+                                <p class="title">双子座-炫紫星空</p>
+                                <label class="price">￥520.00</label>
+                            </div>
+                        </a>
+                    </li>
 
-        </label>
-        
-    </div>
-</div>
-
-<div data-role="widget" data-widget="goodsList_1" class="goodsList_1">
-    <div class="widget_wrap">
-        <ul>
-            
-            <li>
-                <a href="/vshop/Goods/GoodsDetail3/152736">
-                    <div>
-                        <img src="http://shopimg.weimob.com/308628/Goods/1501231900585855.jpg@0e_320w_320h_0c_0i_0o_90Q_1x.src" />
-                        
-                        <span name="goodsdetailspan" class="tag">��Ʒ</span>
-                        
-                    </div>
-                    <div>
-                        <p class="title">���޵�����-�������</p>
-                        <label class="price">��499.00</label>
-                    </div>
-                </a>
-            </li>
-            
-            <li>
-                <a href="/vshop/Goods/GoodsDetail3/152730">
-                    <div>
-                        <img src="http://shopimg.weimob.com/308628/Goods/1501231857254621.jpg@0e_320w_320h_0c_0i_0o_90Q_1x.src" />
-                        
-                        <span name="goodsdetailspan" class="tag">��Ʒ</span>
-                        
-                    </div>
-                    <div>
-                        <p class="title">���޵�����-һ����Ӱ</p>
-                        <label class="price">��599.00</label>
-                    </div>
-                </a>
-            </li>
-            
-        </ul>
-    </div>
-</div>
-
-<div data-role="widget" data-widget="goodsList_1" class="goodsList_1">
-    <div class="widget_wrap">
-        <ul>
-            
-            <li>
-                <a href="/vshop/Goods/GoodsDetail3/152725">
-                    <div>
-                        <img src="http://shopimg.weimob.com/308628/Goods/1501231854341763.jpg@0e_320w_320h_0c_0i_0o_90Q_1x.src" />
-                        
-                        <span name="goodsdetailspan" class="tag">��Ʒ</span>
-                        
-                    </div>
-                    <div>
-                        <p class="title">���޵�����-������֮��</p>
-                        <label class="price">��499.00</label>
-                    </div>
-                </a>
-            </li>
-            
-            <li>
-                <a href="/vshop/Goods/GoodsDetail3/152721">
-                    <div>
-                        <img src="http://shopimg.weimob.com/308628/Goods/1501231850564784.jpg@0e_320w_320h_0c_0i_0o_90Q_1x.src" />
-                        
-                        <span name="goodsdetailspan" class="tag">��Ʒ</span>
-                        
-                    </div>
-                    <div>
-                        <p class="title">���޵�����-����</p>
-                        <label class="price">��499.00</label>
-                    </div>
-                </a>
-            </li>
-            
-        </ul>
-    </div>
-</div>
-
-<div data-role="widget" data-widget="goodsList_1" class="goodsList_1">
-    <div class="widget_wrap">
-        <ul>
-            
-            <li>
-                <a href="/vshop/Goods/GoodsDetail3/152715">
-                    <div>
-                        <img src="http://shopimg.weimob.com/308628/Goods/1501231846535032.jpg@0e_320w_320h_0c_0i_0o_90Q_1x.src" />
-                        
-                        <span name="goodsdetailspan" class="tag">��Ʒ</span>
-                        
-                    </div>
-                    <div>
-                        <p class="title">���޵�����-�Ե�����</p>
-                        <label class="price">��499.00</label>
-                    </div>
-                </a>
-            </li>
-            
-            <li>
-                <a href="/vshop/Goods/GoodsDetail3/152710">
-                    <div>
-                        <img src="http://shopimg.weimob.com/308628/Goods/1501231842410585.jpg@0e_320w_320h_0c_0i_0o_90Q_1x.src" />
-                        
-                        <span name="goodsdetailspan" class="tag">��Ʒ</span>
-                        
-                    </div>
-                    <div>
-                        <p class="title">���޵�����-�������</p>
-                        <label class="price">��499.00</label>
-                    </div>
-                </a>
-            </li>
-            
-        </ul>
-    </div>
-</div>
-
-<div data-role="widget" data-widget="goodsList_1" class="goodsList_1">
-    <div class="widget_wrap">
-        <ul>
-            
-            <li>
-                <a href="/vshop/Goods/GoodsDetail3/152702">
-                    <div>
-                        <img src="http://shopimg.weimob.com/308628/Goods/1501231838110589.jpg@0e_320w_320h_0c_0i_0o_90Q_1x.src" />
-                        
-                        <span name="goodsdetailspan" class="tag">��Ʒ</span>
-                        
-                    </div>
-                    <div>
-                        <p class="title">���޵�����-һĨ���</p>
-                        <label class="price">��499.00</label>
-                    </div>
-                </a>
-            </li>
-            
-            <li>
-                <a href="/vshop/Goods/GoodsDetail3/103809">
-                    <div>
-                        <img src="http://shopimg.weimob.com/308628/Goods/1412171947222373.jpg@0e_320w_320h_0c_0i_0o_90Q_1x.src" />
-                        
-                    </div>
-                    <div>
-                        <p class="title">���޵�����-�������</p>
-                        <label class="price">��699.00</label>
-                    </div>
-                </a>
-            </li>
-            
-        </ul>
-    </div>
-</div>
-
-<div data-role="widget" data-widget="goodsList_1" class="goodsList_1">
-    <div class="widget_wrap">
-        <ul>
-            
-            <li>
-                <a href="/vshop/Goods/GoodsDetail3/111155">
-                    <div>
-                        <img src="http://shopimg.weimob.com/308628/Goods/1501231912482285.jpg@0e_320w_320h_0c_0i_0o_90Q_1x.src" />
-                        
-                    </div>
-                    <div>
-                        <p class="title">���޵�����-������ˮ</p>
-                        <label class="price">��799.00</label>
-                    </div>
-                </a>
-            </li>
-            
-            <li>
-                <a href="/vshop/Goods/GoodsDetail3/111150">
-                    <div>
-                        <img src="http://shopimg.weimob.com/308628/Goods/1501231917536674.jpg@0e_320w_320h_0c_0i_0o_90Q_1x.src" />
-                        
-                    </div>
-                    <div>
-                        <p class="title">���޵�����-ȼ��ʱ��</p>
-                        <label class="price">��499.00</label>
-                    </div>
-                </a>
-            </li>
-            
-        </ul>
-    </div>
-</div>
-
-<div data-role="widget" data-widget="goodsList_1" class="goodsList_1">
-    <div class="widget_wrap">
-        <ul>
-            
-            <li>
-                <a href="/vshop/Goods/GoodsDetail3/103806">
-                    <div>
-                        <img src="http://shopimg.weimob.com/308628/Goods/1412171944560765.jpg@0e_320w_320h_0c_0i_0o_90Q_1x.src" />
-                        
-                    </div>
-                    <div>
-                        <p class="title">���޵�����-��֮����</p>
-                        <label class="price">��499.00</label>
-                    </div>
-                </a>
-            </li>
-            
-            <li>
-                <a href="/vshop/Goods/GoodsDetail3/103786">
-                    <div>
-                        <img src="http://shopimg.weimob.com/308628/Goods/1412171938205144.jpg@0e_320w_320h_0c_0i_0o_90Q_1x.src" />
-                        
-                    </div>
-                    <div>
-                        <p class="title">���޵�����-��ҹŮ��</p>
-                        <label class="price">��599.00</label>
-                    </div>
-                </a>
-            </li>
-            
-        </ul>
-    </div>
-</div>
-
-<div data-role="widget" data-widget="goodsList_1" class="goodsList_1">
-    <div class="widget_wrap">
-        <ul>
-            
-            <li>
-                <a href="/vshop/Goods/GoodsDetail3/52640">
-                    <div>
-                        <img src="http://shopimg.weimob.com/308628/Goods/1411080357322318.jpg@0e_320w_320h_0c_0i_0o_90Q_1x.src" />
-                        
-                    </div>
-                    <div>
-                        <p class="title">���޵�����-ʥŮ֮��</p>
-                        <label class="price">��520.00</label>
-                    </div>
-                </a>
-            </li>
-            
-            <li>
-                <a href="/vshop/Goods/GoodsDetail3/52641">
-                    <div>
-                        <img src="http://shopimg.weimob.com/308628/Goods/1411080400515650.jpg@0e_320w_320h_0c_0i_0o_90Q_1x.src" />
-                        
-                    </div>
-                    <div>
-                        <p class="title">���޵�����-ҹ����Ӱ</p>
-                        <label class="price">��599.00</label>
-                    </div>
-                </a>
-            </li>
-            
-        </ul>
-    </div>
-</div>
-
-<div data-role="widget" data-widget="goodsList_1" class="goodsList_1">
-    <div class="widget_wrap">
-        <ul>
-            
-            <li>
-                <a href="/vshop/Goods/GoodsDetail3/52639">
-                    <div>
-                        <img src="http://shopimg.weimob.com/308628/Goods/1411080354244458.jpg@0e_320w_320h_0c_0i_0o_90Q_1x.src" />
-                        
-                    </div>
-                    <div>
-                        <p class="title">���޵�����-��֮�ɱ�</p>
-                        <label class="price">��499.00</label>
-                    </div>
-                </a>
-            </li>
-            
-            <li>
-                <a href="/vshop/Goods/GoodsDetail3/52638">
-                    <div>
-                        <img src="http://shopimg.weimob.com/308628/Goods/1411080349331102.jpg@0e_320w_320h_0c_0i_0o_90Q_1x.src" />
-                        
-                    </div>
-                    <div>
-                        <p class="title">���޵�����-�ĸ��趯</p>
-                        <label class="price">��499.00</label>
-                    </div>
-                </a>
-            </li>
-            
-        </ul>
-    </div>
-</div>
-
-<div data-role="widget" data-widget="goodsList_1" class="goodsList_1">
-    <div class="widget_wrap">
-        <ul>
-            
-            <li>
-                <a href="/vshop/Goods/GoodsDetail3/52637">
-                    <div>
-                        <img src="http://shopimg.weimob.com/308628/Goods/1411080341200251.jpg@0e_320w_320h_0c_0i_0o_90Q_1x.src" />
-                        
-                    </div>
-                    <div>
-                        <p class="title">���޵�����-����ӳ�񣨶̿</p>
-                        <label class="price">��599.00</label>
-                    </div>
-                </a>
-            </li>
-            
-            <li>
-                <a href="/vshop/Goods/GoodsDetail3/52636">
-                    <div>
-                        <img src="http://shopimg.weimob.com/308628/Goods/1411080335396825.jpg@0e_320w_320h_0c_0i_0o_90Q_1x.src" />
-                        
-                    </div>
-                    <div>
-                        <p class="title">���޵�����-����ӳ�񣨳��</p>
-                        <label class="price">��799.00</label>
-                    </div>
-                </a>
-            </li>
-            
-        </ul>
-    </div>
-</div>
-
-<div data-role="widget" data-widget="goodsList_1" class="goodsList_1">
-    <div class="widget_wrap">
-        <ul>
-            
-            <li>
-                <a href="/vshop/Goods/GoodsDetail3/52635">
-                    <div>
-                        <img src="http://shopimg.weimob.com/308628/Goods/1411080328010095.jpg@0e_320w_320h_0c_0i_0o_90Q_1x.src" />
-                        
-                    </div>
-                    <div>
-                        <p class="title">���޵�����-SSͬ��</p>
-                        <label class="price">��1314.00</label>
-                    </div>
-                </a>
-            </li>
-            
                 </ul>
-					</div>
-				</div>
-                
-        </section>
-        <footer data-role="footer">
-            
+            </div>
+        </div>
 
-<div data-role="copyright">
-    
-    <div data-role="copyright" data-copyright="copyright1" class="copyright1">
-        <div class="widget_wrap">
-            <ul class="tbox">
-                
-                <li>
+        <div data-role="widget" data-widget="goodsList_1" class="goodsList_1">
+            <div class="widget_wrap">
+                <ul>
+
+                    <li>
+                        <a href="/vshop/Goods/GoodsDetail3/166086">
+                            <div>
+                                <img src="http://shopimg.weimob.com/308628/Goods/1502081243162431.jpg@0e_320w_320h_0c_0i_0o_90Q_1x.src" />
+
+                                <span name="goodsdetailspan" class="tag">双鱼座</span>
+
+                            </div>
+                            <div>
+                                <p class="title">双鱼座-心心相依</p>
+                                <label class="price">￥520.00</label>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="/vshop/Goods/GoodsDetail3/166085">
+                            <div>
+                                <img src="http://shopimg.weimob.com/308628/Goods/1502081238319952.jpg@0e_320w_320h_0c_0i_0o_90Q_1x.src" />
+
+                                <span name="goodsdetailspan" class="tag">摩羯座</span>
+
+                            </div>
+                            <div>
+                                <p class="title">摩羯座-似水柔情</p>
+                                <label class="price">￥999.00</label>
+                            </div>
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+
+        <div data-role="widget" data-widget="goodsList_1" class="goodsList_1">
+            <div class="widget_wrap">
+                <ul>
+
+                    <li>
+                        <a href="/vshop/Goods/GoodsDetail3/166084">
+                            <div>
+                                <img src="http://shopimg.weimob.com/308628/Goods/1502081232599041.jpg@0e_320w_320h_0c_0i_0o_90Q_1x.src" />
+
+                                <span name="goodsdetailspan" class="tag">水瓶座</span>
+
+                            </div>
+                            <div>
+                                <p class="title">水瓶座-圣女之吻</p>
+                                <label class="price">￥520.00</label>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="/vshop/Goods/GoodsDetail3/166083">
+                            <div>
+                                <img src="http://shopimg.weimob.com/308628/Goods/1502081227145901.jpg@0e_320w_320h_0c_0i_0o_90Q_1x.src" />
+
+                                <span name="goodsdetailspan" class="tag">射手座</span>
+
+                            </div>
+                            <div>
+                                <p class="title">射手座-深蓝诱惑</p>
+                                <label class="price">￥520.00</label>
+                            </div>
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+
+        <div data-role="widget" data-widget="goodsList_1" class="goodsList_1">
+            <div class="widget_wrap">
+                <ul>
+
+                    <li>
+                        <a href="/vshop/Goods/GoodsDetail3/166082">
+                            <div>
+                                <img src="http://shopimg.weimob.com/308628/Goods/1502081221463186.jpg@0e_320w_320h_0c_0i_0o_90Q_1x.src" />
+
+                                <span name="goodsdetailspan" class="tag">狮子座</span>
+
+                            </div>
+                            <div>
+                                <p class="title">狮子座-如梦如幻</p>
+                                <label class="price">￥999.00</label>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="/vshop/Goods/GoodsDetail3/166081">
+                            <div>
+                                <img src="http://shopimg.weimob.com/308628/Goods/1502081215344607.jpg@0e_320w_320h_0c_0i_0o_90Q_1x.src" />
+
+                                <span name="goodsdetailspan" class="tag">白羊座</span>
+
+                            </div>
+                            <div>
+                                <p class="title">白羊座-燃情魅狐</p>
+                                <label class="price">￥520.00</label>
+                            </div>
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+
+        <div data-role="widget" data-widget="goodsList_1" class="goodsList_1">
+            <div class="widget_wrap">
+                <ul>
+
+                    <li>
+                        <a href="/vshop/Goods/GoodsDetail3/166080">
+                            <div>
+                                <img src="http://shopimg.weimob.com/308628/Goods/1502081209312157.jpg@0e_320w_320h_0c_0i_0o_90Q_1x.src" />
+
+                                <span name="goodsdetailspan" class="tag">天秤座</span>
+
+                            </div>
+                            <div>
+                                <p class="title">天秤座-俏丽佳人</p>
+                                <label class="price">￥520.00</label>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="/vshop/Goods/GoodsDetail3/166079">
+                            <div>
+                                <img src="http://shopimg.weimob.com/308628/Goods/1502081203132680.jpg@0e_320w_320h_0c_0i_0o_90Q_1x.src" />
+
+                                <span name="goodsdetailspan" class="tag">金牛座</span>
+
+                            </div>
+                            <div>
+                                <p class="title">金牛座-迷醉红颜</p>
+                                <label class="price">￥520.00</label>
+                            </div>
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+
+        <div data-role="widget" data-widget="goodsList_1" class="goodsList_1">
+            <div class="widget_wrap">
+                <ul>
+
+                    <li>
+                        <a href="/vshop/Goods/GoodsDetail3/166078">
+                            <div>
+                                <img src="http://shopimg.weimob.com/308628/Goods/1502081156231834.jpg@0e_320w_320h_0c_0i_0o_90Q_1x.src" />
+
+                                <span name="goodsdetailspan" class="tag">处女座</span>
+
+                            </div>
+                            <div>
+                                <p class="title">处女座-花语映像</p>
+                                <label class="price">￥520.00</label>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="/vshop/Goods/GoodsDetail3/166076">
+                            <div>
+                                <img src="http://shopimg.weimob.com/308628/Goods/1502081148410208.jpg@0e_320w_320h_0c_0i_0o_90Q_1x.src" />
+
+                                <span name="goodsdetailspan" class="tag">巨蟹座</span>
+
+                            </div>
+                            <div>
+                                <p class="title">巨蟹座-SS同款</p>
+                                <label class="price">￥1314.00</label>
+                            </div>
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+
+
+        <div data-role="widget" data-widget="title_3" class="title_3">
+            <div class="widget_wrap">
+
+                <label>
+                    <p>新品首发</p>
+
+                </label>
+
+            </div>
+        </div>
+
+        <div data-role="widget" data-widget="goodsList_1" class="goodsList_1">
+            <div class="widget_wrap">
+                <ul>
+
+                    <li>
+                        <a href="/vshop/Goods/GoodsDetail3/152736">
+                            <div>
+                                <img src="http://shopimg.weimob.com/308628/Goods/1501231900585855.jpg@0e_320w_320h_0c_0i_0o_90Q_1x.src" />
+
+                                <span name="goodsdetailspan" class="tag">新品</span>
+
+                            </div>
+                            <div>
+                                <p class="title">夏娃的秘密-纤云绮梦</p>
+                                <label class="price">￥499.00</label>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="/vshop/Goods/GoodsDetail3/152730">
+                            <div>
+                                <img src="http://shopimg.weimob.com/308628/Goods/1501231857254621.jpg@0e_320w_320h_0c_0i_0o_90Q_1x.src" />
+
+                                <span name="goodsdetailspan" class="tag">新品</span>
+
+                            </div>
+                            <div>
+                                <p class="title">夏娃的秘密-一帘魅影</p>
+                                <label class="price">￥599.00</label>
+                            </div>
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+
+        <div data-role="widget" data-widget="goodsList_1" class="goodsList_1">
+            <div class="widget_wrap">
+                <ul>
+
+                    <li>
+                        <a href="/vshop/Goods/GoodsDetail3/152725">
+                            <div>
+                                <img src="http://shopimg.weimob.com/308628/Goods/1501231854341763.jpg@0e_320w_320h_0c_0i_0o_90Q_1x.src" />
+
+                                <span name="goodsdetailspan" class="tag">新品</span>
+
+                            </div>
+                            <div>
+                                <p class="title">夏娃的秘密-紫罗兰之恋</p>
+                                <label class="price">￥499.00</label>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="/vshop/Goods/GoodsDetail3/152721">
+                            <div>
+                                <img src="http://shopimg.weimob.com/308628/Goods/1501231850564784.jpg@0e_320w_320h_0c_0i_0o_90Q_1x.src" />
+
+                                <span name="goodsdetailspan" class="tag">新品</span>
+
+                            </div>
+                            <div>
+                                <p class="title">夏娃的秘密-聆听花开</p>
+                                <label class="price">￥499.00</label>
+                            </div>
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+
+        <div data-role="widget" data-widget="goodsList_1" class="goodsList_1">
+            <div class="widget_wrap">
+                <ul>
+
+                    <li>
+                        <a href="/vshop/Goods/GoodsDetail3/152715">
+                            <div>
+                                <img src="http://shopimg.weimob.com/308628/Goods/1501231846535032.jpg@0e_320w_320h_0c_0i_0o_90Q_1x.src" />
+
+                                <span name="goodsdetailspan" class="tag">新品</span>
+
+                            </div>
+                            <div>
+                                <p class="title">夏娃的秘密-迷蝶晓梦</p>
+                                <label class="price">￥499.00</label>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="/vshop/Goods/GoodsDetail3/152710">
+                            <div>
+                                <img src="http://shopimg.weimob.com/308628/Goods/1501231842410585.jpg@0e_320w_320h_0c_0i_0o_90Q_1x.src" />
+
+                                <span name="goodsdetailspan" class="tag">新品</span>
+
+                            </div>
+                            <div>
+                                <p class="title">夏娃的秘密-粉黛佳人</p>
+                                <label class="price">￥499.00</label>
+                            </div>
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+
+        <div data-role="widget" data-widget="goodsList_1" class="goodsList_1">
+            <div class="widget_wrap">
+                <ul>
+
+                    <li>
+                        <a href="/vshop/Goods/GoodsDetail3/152702">
+                            <div>
+                                <img src="http://shopimg.weimob.com/308628/Goods/1501231838110589.jpg@0e_320w_320h_0c_0i_0o_90Q_1x.src" />
+
+                                <span name="goodsdetailspan" class="tag">新品</span>
+
+                            </div>
+                            <div>
+                                <p class="title">夏娃的秘密-一抹香痕</p>
+                                <label class="price">￥499.00</label>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="/vshop/Goods/GoodsDetail3/103809">
+                            <div>
+                                <img src="http://shopimg.weimob.com/308628/Goods/1412171947222373.jpg@0e_320w_320h_0c_0i_0o_90Q_1x.src" />
+
+                            </div>
+                            <div>
+                                <p class="title">夏娃的秘密-如梦如幻</p>
+                                <label class="price">￥699.00</label>
+                            </div>
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+
+        <div data-role="widget" data-widget="goodsList_1" class="goodsList_1">
+            <div class="widget_wrap">
+                <ul>
+
+                    <li>
+                        <a href="/vshop/Goods/GoodsDetail3/111155">
+                            <div>
+                                <img src="http://shopimg.weimob.com/308628/Goods/1501231912482285.jpg@0e_320w_320h_0c_0i_0o_90Q_1x.src" />
+
+                            </div>
+                            <div>
+                                <p class="title">夏娃的秘密-柔情似水</p>
+                                <label class="price">￥799.00</label>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="/vshop/Goods/GoodsDetail3/111150">
+                            <div>
+                                <img src="http://shopimg.weimob.com/308628/Goods/1501231917536674.jpg@0e_320w_320h_0c_0i_0o_90Q_1x.src" />
+
+                            </div>
+                            <div>
+                                <p class="title">夏娃的秘密-燃情时刻</p>
+                                <label class="price">￥499.00</label>
+                            </div>
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+
+        <div data-role="widget" data-widget="goodsList_1" class="goodsList_1">
+            <div class="widget_wrap">
+                <ul>
+
+                    <li>
+                        <a href="/vshop/Goods/GoodsDetail3/103806">
+                            <div>
+                                <img src="http://shopimg.weimob.com/308628/Goods/1412171944560765.jpg@0e_320w_320h_0c_0i_0o_90Q_1x.src" />
+
+                            </div>
+                            <div>
+                                <p class="title">夏娃的秘密-花之蓓蕾</p>
+                                <label class="price">￥499.00</label>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="/vshop/Goods/GoodsDetail3/103786">
+                            <div>
+                                <img src="http://shopimg.weimob.com/308628/Goods/1412171938205144.jpg@0e_320w_320h_0c_0i_0o_90Q_1x.src" />
+
+                            </div>
+                            <div>
+                                <p class="title">夏娃的秘密-暗夜女王</p>
+                                <label class="price">￥599.00</label>
+                            </div>
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+
+        <div data-role="widget" data-widget="goodsList_1" class="goodsList_1">
+            <div class="widget_wrap">
+                <ul>
+
+                    <li>
+                        <a href="/vshop/Goods/GoodsDetail3/52640">
+                            <div>
+                                <img src="http://shopimg.weimob.com/308628/Goods/1411080357322318.jpg@0e_320w_320h_0c_0i_0o_90Q_1x.src" />
+
+                            </div>
+                            <div>
+                                <p class="title">夏娃的秘密-圣女之吻</p>
+                                <label class="price">￥520.00</label>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="/vshop/Goods/GoodsDetail3/52641">
+                            <div>
+                                <img src="http://shopimg.weimob.com/308628/Goods/1411080400515650.jpg@0e_320w_320h_0c_0i_0o_90Q_1x.src" />
+
+                            </div>
+                            <div>
+                                <p class="title">夏娃的秘密-夜雾魅影</p>
+                                <label class="price">￥599.00</label>
+                            </div>
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+
+        <div data-role="widget" data-widget="goodsList_1" class="goodsList_1">
+            <div class="widget_wrap">
+                <ul>
+
+                    <li>
+                        <a href="/vshop/Goods/GoodsDetail3/52639">
+                            <div>
+                                <img src="http://shopimg.weimob.com/308628/Goods/1411080354244458.jpg@0e_320w_320h_0c_0i_0o_90Q_1x.src" />
+
+                            </div>
+                            <div>
+                                <p class="title">夏娃的秘密-幼之蜕变</p>
+                                <label class="price">￥499.00</label>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="/vshop/Goods/GoodsDetail3/52638">
+                            <div>
+                                <img src="http://shopimg.weimob.com/308628/Goods/1411080349331102.jpg@0e_320w_320h_0c_0i_0o_90Q_1x.src" />
+
+                            </div>
+                            <div>
+                                <p class="title">夏娃的秘密-媚感舞动</p>
+                                <label class="price">￥499.00</label>
+                            </div>
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+
+        <div data-role="widget" data-widget="goodsList_1" class="goodsList_1">
+            <div class="widget_wrap">
+                <ul>
+
+                    <li>
+                        <a href="/vshop/Goods/GoodsDetail3/52637">
+                            <div>
+                                <img src="http://shopimg.weimob.com/308628/Goods/1411080341200251.jpg@0e_320w_320h_0c_0i_0o_90Q_1x.src" />
+
+                            </div>
+                            <div>
+                                <p class="title">夏娃的秘密-花语映像（短款）</p>
+                                <label class="price">￥599.00</label>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="/vshop/Goods/GoodsDetail3/52636">
+                            <div>
+                                <img src="http://shopimg.weimob.com/308628/Goods/1411080335396825.jpg@0e_320w_320h_0c_0i_0o_90Q_1x.src" />
+
+                            </div>
+                            <div>
+                                <p class="title">夏娃的秘密-花语映像（长款）</p>
+                                <label class="price">￥799.00</label>
+                            </div>
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+
+        <div data-role="widget" data-widget="goodsList_1" class="goodsList_1">
+            <div class="widget_wrap">
+                <ul>
+
+                    <li>
+                        <a href="/vshop/Goods/GoodsDetail3/52635">
+                            <div>
+                                <img src="http://shopimg.weimob.com/308628/Goods/1411080328010095.jpg@0e_320w_320h_0c_0i_0o_90Q_1x.src" />
+
+                            </div>
+                            <div>
+                                <p class="title">夏娃的秘密-SS同款</p>
+                                <label class="price">￥1314.00</label>
+                            </div>
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+
+    </section>
+    <footer data-role="footer">
+
+
+        <div data-role="copyright">
+
+            <div data-role="copyright" data-copyright="copyright1" class="copyright1">
+                <div class="widget_wrap">
+                    <ul class="tbox">
+
+                        <li>
                     <span class="img_wrap">
                         <img src="http://hs-net-shop-img.oss-cn-hangzhou.aliyuncs.com/308628/Group/1411011830315913.png" />
 
                     </span>
-                </li>
-                
+                        </li>
 
-                <li>
-                    <p class="box">
-                        <a href="http://308628.m.weimob.com/vshop/index">������ҳ</a>
-                        <a href="http://308628.m.weimob.com/vshop/UserCenter">��Ա����</a>
-                        <a href="tel:021-65219708">��ϵ����</a>
-                    </p>
-                    <p>
-                        <a href="javascript:;">?���޵����ܹٷ��̳�</a>
-                    </p>
-                </li>
-            </ul>
-        </div>
-    </div>
-    
-    <script type="text/javascript" src="http://stc.weimob.com/src/st/share_channel.js?v=111111"></script>
-    <script>
-        var isGoodsDetial=0;//�Ƿ�����ҳ
-        var APPShareLink = "http://308628.m.weimob.com/vshop/index?";
-        var APPShareDes = '����Ȥ�����';
-        var APPShareTitle = '���޵�����';
-        var APPShareimg = 'http://hs-net-shop-img.oss-cn-hangzhou.aliyuncs.com/308628/Group/1411011832384713.jpg';
-        var APPShareTitleId = "";
-        var APPShareDesId = "";
-        var APPSharehidDesId = "";
-        var APPShareimgId = "";
 
-        var FriendShareLink = "http://308628.m.weimob.com/vshop/index?";
-        var FriendShareDes = '����Ȥ�����';
-        var FriendShareTitle = '���޵�����';
-        var FriendShareimg = 'http://hs-net-shop-img.oss-cn-hangzhou.aliyuncs.com/308628/Group/1411011832384713.jpg';
-        var FriendShareDesId = '';
-        var FriendShareTitleId = '';
-        var FriendSharehidTitleId = '';
-        var FriendShareimgId = '';
+                        <li>
+                            <p class="box">
+                                <a href="http://308628.m.weimob.com/vshop/index">店铺首页</a>
+                                <a href="http://308628.m.weimob.com/vshop/UserCenter">会员中心</a>
+                                <a href="tel:021-65219708">联系我们</a>
+                            </p>
+                            <p>
+                                <a href="javascript:;">©夏娃的秘密官方商城</a>
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
 
-        var WeiboShareimg = 'http://hs-net-shop-img.oss-cn-hangzhou.aliyuncs.com/308628/Group/1411011832384713.jpg';
-        var WeiboShareDes = '����Ȥ�����';
-        var WeiboShareimgId = "";
-        var WeiboShareDesId = '';
-        document.title = '���޵�����';
+            <script type="text/javascript" src="http://stc.weimob.com/src/st/share_channel.js?v=111111"></script>
+            <script>
+                var isGoodsDetial=0;//是否详情页
+                var APPShareLink = "http://308628.m.weimob.com/vshop/index?";
+                var APPShareDes = '无情趣不生活';
+                var APPShareTitle = '夏娃的秘密';
+                var APPShareimg = 'http://hs-net-shop-img.oss-cn-hangzhou.aliyuncs.com/308628/Group/1411011832384713.jpg';
+                var APPShareTitleId = "";
+                var APPShareDesId = "";
+                var APPSharehidDesId = "";
+                var APPShareimgId = "";
 
-        var ShareSDAgentId = -1;
-        var ShareAgentId = -1;
-        var ShareEmployeesId = -1;
-        var ShareVKId = -1;
+                var FriendShareLink = "http://308628.m.weimob.com/vshop/index?";
+                var FriendShareDes = '无情趣不生活';
+                var FriendShareTitle = '夏娃的秘密';
+                var FriendShareimg = 'http://hs-net-shop-img.oss-cn-hangzhou.aliyuncs.com/308628/Group/1411011832384713.jpg';
+                var FriendShareDesId = '';
+                var FriendShareTitleId = '';
+                var FriendSharehidTitleId = '';
+                var FriendShareimgId = '';
 
-        document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
-            var imgs = $("img");
-            var img = "";
-            if (imgs && imgs.length > 0 && imgs[0]) {
-                img = $(imgs[0]).attr("src");
-            }
-            // ���͸����
-            WeixinJSBridge.on('menu:share:appmessage', function (argv) {
-                var thisimg = APPShareimg;
-                if (thisimg == "" && APPShareimgId != "") {
-                    thisimg = $("#" + APPShareimgId).val();
-                }
-                if (thisimg == "") {
-                    thisimg = img;
-                }
-                var thislink = APPShareLink;
-                var thisTitle = APPShareTitle;
-                if (thisTitle == "" && APPShareTitleId != "") {
-                    thisTitle = $("#" + APPShareTitleId).val();
-                }
-                var thisDes = APPShareDes;
-                if (thisDes == "" && APPShareDesId != "") {
-                    thisDes = $("#" + APPShareDesId).val();
-                }
-                if (thisDes == "" && APPSharehidDesId != "") {
-                    thisDes = $("#" + APPSharehidDesId).val();
-                }
-                if (thisDes == "") {
-                    thisDes = thisTitle;
-                }
-                thislink = channelHandle(thislink, "f");
-                WeixinJSBridge.invoke('sendAppMessage', {
-                    "img_url": thisimg,
-                    "img_width": "640",
-                    "img_height": "640",
-                    "link": thislink,
-                    "desc": (isGoodsDetial==1?("����΢�źõ꣺"+"���޵�����"):thisDes),
-                    "title": ((isGoodsDetial==0?"�Ƽ�һ�Һõ꣺":"")+ thisTitle)
-                    
-                }, function (res) {
-                    if ('send_app_msg:cancel' != res.err_msg) {
-                        if (APP && APP.page && APP.page == "detail" && ShareVKId > 0) {
-                            var sdagentid = 0;
-                            if(ShareSDAgentId > 0){
-                                sdagentid = ShareSDAgentId;
-                            }
-                            var agentid = 0;
-                            if(ShareAgentId > 0){
-                                agentid = ShareAgentId;
-                            }
-                            ShareGoods(308628,APP.goodsId,sdagentid,agentid,ShareVKId);
+                var WeiboShareimg = 'http://hs-net-shop-img.oss-cn-hangzhou.aliyuncs.com/308628/Group/1411011832384713.jpg';
+                var WeiboShareDes = '无情趣不生活';
+                var WeiboShareimgId = "";
+                var WeiboShareDesId = '';
+                document.title = '夏娃的秘密';
+
+                var ShareSDAgentId = -1;
+                var ShareAgentId = -1;
+                var ShareEmployeesId = -1;
+                var ShareVKId = -1;
+
+                document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+                    var imgs = $("img");
+                    var img = "";
+                    if (imgs && imgs.length > 0 && imgs[0]) {
+                        img = $(imgs[0]).attr("src");
+                    }
+                    // 发送给好友
+                    WeixinJSBridge.on('menu:share:appmessage', function (argv) {
+                        var thisimg = APPShareimg;
+                        if (thisimg == "" && APPShareimgId != "") {
+                            thisimg = $("#" + APPShareimgId).val();
                         }
-                    }
-                    _report('send_msg', res.err_msg);
-                })
-            });
-
-            // ���?����Ȧ
-            WeixinJSBridge.on('menu:share:timeline', function (argv) {
-                var thisimg = FriendShareimg;
-                if (thisimg == "") {
-                    thisimg = $("#" + FriendShareimgId).val();
-                }
-                if (thisimg == "") {
-                    thisimg = img;
-                }
-                var thislink = FriendShareLink;
-                var thisTitle = FriendShareTitle;
-                if (thisTitle == "" && FriendShareTitleId != "") {
-                    thisTitle = $("#" + FriendShareTitleId).val();
-                }
-                if (thisTitle == "" && FriendSharehidTitleId != "") {
-                    thisTitle = $("#" + FriendSharehidTitleId).val();
-                }
-                var thisDes = FriendShareDes;
-                if (thisDes == "" && FriendShareDesId != "") {
-                    thisDes = $("#" + FriendShareDesId).val();
-                }
-                if (thisDes == "") {
-                    thisDes = thisTitle;
-                }
-                thislink = channelHandle(thislink, "fc");
-                WeixinJSBridge.invoke('shareTimeline', {
-                    "img_url": thisimg,
-                    "img_width": "640",
-                    "img_height": "640",
-                    "link": thislink,
-                    "desc": (isGoodsDetial==1?"�Ƽ�һ�Һõ꣺"+"���޵�����":thisTitle ),
-                    "title":((isGoodsDetial==0?"�Ƽ�һ�Һõ꣺":"")+ thisTitle)
-                }, function (res) {
-                    if ('share_timeline:cancel' != res.err_msg) {
-                        //����û�û��ȡ��
-                        if (APP && APP.page && APP.page == "detail" && ShareVKId > 0) {
-                            var sdagentid = 0;
-                            if(ShareSDAgentId > 0){
-                                sdagentid = ShareSDAgentId;
-                            }
-                            var agentid = 0;
-                            if(ShareAgentId > 0){
-                                agentid = ShareAgentId;
-                            }
-                            ShareGoods(308628,APP.goodsId,sdagentid,agentid,ShareVKId);
+                        if (thisimg == "") {
+                            thisimg = img;
                         }
+                        var thislink = APPShareLink;
+                        var thisTitle = APPShareTitle;
+                        if (thisTitle == "" && APPShareTitleId != "") {
+                            thisTitle = $("#" + APPShareTitleId).val();
+                        }
+                        var thisDes = APPShareDes;
+                        if (thisDes == "" && APPShareDesId != "") {
+                            thisDes = $("#" + APPShareDesId).val();
+                        }
+                        if (thisDes == "" && APPSharehidDesId != "") {
+                            thisDes = $("#" + APPSharehidDesId).val();
+                        }
+                        if (thisDes == "") {
+                            thisDes = thisTitle;
+                        }
+                        thislink = channelHandle(thislink, "f");
+                        WeixinJSBridge.invoke('sendAppMessage', {
+                            "img_url": thisimg,
+                            "img_width": "640",
+                            "img_height": "640",
+                            "link": thislink,
+                            "desc": (isGoodsDetial==1?("来自微信好店："+"夏娃的秘密"):thisDes),
+                            "title": ((isGoodsDetial==0?"推荐一家好店：":"")+ thisTitle)
+
+                        }, function (res) {
+                            if ('send_app_msg:cancel' != res.err_msg) {
+                                if (APP && APP.page && APP.page == "detail" && ShareVKId > 0) {
+                                    var sdagentid = 0;
+                                    if(ShareSDAgentId > 0){
+                                        sdagentid = ShareSDAgentId;
+                                    }
+                                    var agentid = 0;
+                                    if(ShareAgentId > 0){
+                                        agentid = ShareAgentId;
+                                    }
+                                    ShareGoods(308628,APP.goodsId,sdagentid,agentid,ShareVKId);
+                                }
+                            }
+                            _report('send_msg', res.err_msg);
+                        })
+                    });
+
+                    // 分享到朋友圈
+                    WeixinJSBridge.on('menu:share:timeline', function (argv) {
+                        var thisimg = FriendShareimg;
+                        if (thisimg == "") {
+                            thisimg = $("#" + FriendShareimgId).val();
+                        }
+                        if (thisimg == "") {
+                            thisimg = img;
+                        }
+                        var thislink = FriendShareLink;
+                        var thisTitle = FriendShareTitle;
+                        if (thisTitle == "" && FriendShareTitleId != "") {
+                            thisTitle = $("#" + FriendShareTitleId).val();
+                        }
+                        if (thisTitle == "" && FriendSharehidTitleId != "") {
+                            thisTitle = $("#" + FriendSharehidTitleId).val();
+                        }
+                        var thisDes = FriendShareDes;
+                        if (thisDes == "" && FriendShareDesId != "") {
+                            thisDes = $("#" + FriendShareDesId).val();
+                        }
+                        if (thisDes == "") {
+                            thisDes = thisTitle;
+                        }
+                        thislink = channelHandle(thislink, "fc");
+                        WeixinJSBridge.invoke('shareTimeline', {
+                            "img_url": thisimg,
+                            "img_width": "640",
+                            "img_height": "640",
+                            "link": thislink,
+                            "desc": (isGoodsDetial==1?"推荐一家好店："+"夏娃的秘密":thisTitle ),
+                            "title":((isGoodsDetial==0?"推荐一家好店：":"")+ thisTitle)
+                        }, function (res) {
+                            if ('share_timeline:cancel' != res.err_msg) {
+                                //如果用户没有取消
+                                if (APP && APP.page && APP.page == "detail" && ShareVKId > 0) {
+                                    var sdagentid = 0;
+                                    if(ShareSDAgentId > 0){
+                                        sdagentid = ShareSDAgentId;
+                                    }
+                                    var agentid = 0;
+                                    if(ShareAgentId > 0){
+                                        agentid = ShareAgentId;
+                                    }
+                                    ShareGoods(308628,APP.goodsId,sdagentid,agentid,ShareVKId);
+                                }
+                            }
+                            _report('timeline', res.err_msg);
+                        });
+                    });
+
+                    // 分享到微博
+                    WeixinJSBridge.on('menu:share:weibo', function (argv) {
+                        var thisimg = WeiboShareimg;
+                        if (thisimg == "" && WeiboShareimgId != "") {
+                            thisimg = $("#" + WeiboShareimgId).val();
+                        }
+                        if (thisimg == "") {
+                            thisimg = img;
+                        }
+                        var thisDes = WeiboShareDes;
+                        if (thisDes == "" && WeiboShareDesId != "") {
+                            thisDes = $("#" + WeiboShareDesId).val();
+                        }
+                        WeixinJSBridge.invoke('shareWeibo', {
+                            "content": thisDes,
+                            "url": thisimg
+                        }, function (res) {
+                            if ('share_weibo:cancel' != res.err_msg) {
+                                //weimobAfterShare("", window.shareData.weiboLink, 'weibo');
+                            }
+                            _report('weibo', res.err_msg);
+                        });
+                    });
+                }, false);
+
+                function ShareGoods(AId, goodsId, sdagentid, agentid, VKId){
+                    $.ajax({
+                        type: "POST",
+                        url: "/vshop/Ajax/CopyRightAjax/Share",
+                        data: {
+                            aid:AId,
+                            gid:goodsId,
+                            sdagentid:sdagentid,
+                            agentid:agentid,
+                            vkid:VKId
+                        },
+                        async: true,
+                        success: function (res) {
+
+                        }, dataType: "json"
+                    });
+                }
+
+            </script>
+
+            <script type="text/javascript">
+                setCookie("stat_pid", "308628");
+                setCookie("stat_bid", "479772");
+                try {
+                    if (APP.openid || openid) {
+                        setCookie("stat_openid", APP.openid || openid);
+                        setCookie("stat_webtype", stat_webtype);
                     }
-                    _report('timeline', res.err_msg);
-                });
-            });
 
-            // ���?΢��
-            WeixinJSBridge.on('menu:share:weibo', function (argv) {
-                var thisimg = WeiboShareimg;
-                if (thisimg == "" && WeiboShareimgId != "") {
-                    thisimg = $("#" + WeiboShareimgId).val();
                 }
-                if (thisimg == "") {
-                    thisimg = img;
-                }
-                var thisDes = WeiboShareDes;
-                if (thisDes == "" && WeiboShareDesId != "") {
-                    thisDes = $("#" + WeiboShareDesId).val();
-                }
-                WeixinJSBridge.invoke('shareWeibo', {
-                    "content": thisDes,
-                    "url": thisimg
-                }, function (res) {
-                    if ('share_weibo:cancel' != res.err_msg) {
-                        //weimobAfterShare("", window.shareData.weiboLink, 'weibo');
-                    }
-                    _report('weibo', res.err_msg);
-                });
-            });
-        }, false);
-
-        function ShareGoods(AId, goodsId, sdagentid, agentid, VKId){
-            $.ajax({
-                type: "POST",
-                url: "/vshop/Ajax/CopyRightAjax/Share",
-                data: {
-                    aid:AId,
-                    gid:goodsId,
-                    sdagentid:sdagentid,
-                    agentid:agentid,
-                    vkid:VKId
-                },
-                async: true,
-                success: function (res) {
-                                   
-                }, dataType: "json"
-            });
-        }
-
-    </script>
-    
-    <script type="text/javascript">
-        setCookie("stat_pid", "308628");
-        setCookie("stat_bid", "479772");
-        try {
-            if (APP.openid || openid) {
-                setCookie("stat_openid", APP.openid || openid);
+                catch (e) { }
                 setCookie("stat_webtype", stat_webtype);
-            }
-	    
-        }
-        catch (e) { }
-        setCookie("stat_webtype", stat_webtype);
-        setCookie("stat_module", "vshop");
-        function setCookie(name, value) {
-            var Days = 30;
-            var exp = new Date();
-            exp.setTime(exp.getTime() + Days * 24 * 60 * 60 * 1000);
-            document.cookie = name + "=" + escape(value) + ";expires=" + exp.toGMTString()+";path=/";
-        }
-    </script>
-    <script type="text/javascript" src="http://stc.weimob.com/src/st/base64.js?v=10101010"></script>
-    <script type="text/javascript" src="http://stc.weimob.com/src/st/st.js?v=10101010"></script>
-    <script type="text/javascript">
-        //dev
-        //statisticServerPath:http://121.42.10.197
-        //online:
-        //statisticServerPath:http://statistic.weimob.com
-
-        var statisticServerPath = "http://statistic.weimob.com";
-        st.push("_triggerEvent", {
-            "is_statistic_on": "on", //����
-            "statisticServerPath": statisticServerPath + "/wm.js", //ͳ�Ƶ�ַ
-            "memcServerPath": statisticServerPath + "/memc?cmd=get", //�����ַ
-            "stat_action": "loadPage",  //ͳ�ƶ�������
-            "stat_optValue": ""    //����ֵ
-        });
-    </script>
-</div>
-
-<div data-role="widget" data-widget="menu_4" class="menu_4">
-    <div class="widget_wrap">
-        <ul id="menu_4_ul" style='z-index:9999;'>
-            
-            <li>
-                <a data-fx="Modulefx" href="/vshop/index">
-                    <span class="wicon-home">&nbsp;</span>
-                    <p>��ҳ</p>
-                </a>
-            </li>
-            
-            <li>
-                <a data-fx="Modulefx" href="http://kf.weimob.com/MobileTalking.aspx?aid=308628">
-                    <span class="wicon-service">&nbsp;</span>
-                    <p>�ͷ�</p>
-                </a>
-            </li>
-            
-            <li>
-                <a data-fx="Modulefx" href="/vshop/UserCenter">
-                    <span class="wicon-info">&nbsp;</span>
-                    <p>�û�����</p>
-                </a>
-            </li>
-            
-            <li>
-                <a data-fx="Modulefx" href="/payment/weixinpay/shopAddress?type=0">
-                    <span class="wicon-address">&nbsp;</span>
-                    <p>�ջ���ַ</p>
-                </a>
-            </li>
-            
-            <li>
-                <a data-fx="Modulefx" href="/vshop/UserCenter/MyShoppingCart">
-                    <span class="wicon-cart">&nbsp;</span>
-                    <p>���ﳵ</p>
-                </a>
-            </li>
-            
-        </ul>
-        <script>
-            var menu_4 = (function () {
-                var isTouch = "ontouchstart" in window;
-                var menu = {
-                    handleEvent: function (evt) {
-                        console.log(evt);
-                    }
-                };
-                menu.init = function (id) {
-                    var ul = document.getElementById(id);
-                    lis = ul.querySelectorAll("li");
-                    lis[Math.floor(lis.length / 2)].classList.add("li3");
-                    if (isTouch) {
-                        menu.ul = document.getElementById(id);
-                        menu.ul.addEventListener("touchstart", menu, false);
-                        return menu;
-                    }
+                setCookie("stat_module", "vshop");
+                function setCookie(name, value) {
+                    var Days = 30;
+                    var exp = new Date();
+                    exp.setTime(exp.getTime() + Days * 24 * 60 * 60 * 1000);
+                    document.cookie = name + "=" + escape(value) + ";expires=" + exp.toGMTString()+";path=/";
                 }
-                return menu;
-            })().init("menu_4_ul");
-        </script>
-    </div>
-</div>
+            </script>
+            <script type="text/javascript" src="http://stc.weimob.com/src/st/base64.js?v=10101010"></script>
+            <script type="text/javascript" src="http://stc.weimob.com/src/st/st.js?v=10101010"></script>
+            <script type="text/javascript">
+                //dev
+                //statisticServerPath:http://121.42.10.197
+                //online:
+                //statisticServerPath:http://statistic.weimob.com
 
-        </footer>
-    </div>
+                var statisticServerPath = "http://statistic.weimob.com";
+                st.push("_triggerEvent", {
+                    "is_statistic_on": "on", //开关
+                    "statisticServerPath": statisticServerPath + "/wm.js", //统计地址
+                    "memcServerPath": statisticServerPath + "/memc?cmd=get", //缓存地址
+                    "stat_action": "loadPage",  //统计动作类型
+                    "stat_optValue": ""    //参数值
+                });
+            </script>
+        </div>
+
+        <div data-role="widget" data-widget="menu_4" class="menu_4">
+            <div class="widget_wrap">
+                <ul id="menu_4_ul" style='z-index:9999;'>
+
+                    <li>
+                        <a data-fx="Modulefx" href="/vshop/index">
+                            <span class="wicon-home">&nbsp;</span>
+                            <p>首页</p>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a data-fx="Modulefx" href="http://kf.weimob.com/MobileTalking.aspx?aid=308628">
+                            <span class="wicon-service">&nbsp;</span>
+                            <p>客服</p>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a data-fx="Modulefx" href="/vshop/UserCenter">
+                            <span class="wicon-info">&nbsp;</span>
+                            <p>用户中心</p>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a data-fx="Modulefx" href="/payment/weixinpay/shopAddress?type=0">
+                            <span class="wicon-address">&nbsp;</span>
+                            <p>收货地址</p>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a data-fx="Modulefx" href="/vshop/UserCenter/MyShoppingCart">
+                            <span class="wicon-cart">&nbsp;</span>
+                            <p>购物车</p>
+                        </a>
+                    </li>
+
+                </ul>
+                <script>
+                    var menu_4 = (function () {
+                        var isTouch = "ontouchstart" in window;
+                        var menu = {
+                            handleEvent: function (evt) {
+                                console.log(evt);
+                            }
+                        };
+                        menu.init = function (id) {
+                            var ul = document.getElementById(id);
+                            lis = ul.querySelectorAll("li");
+                            lis[Math.floor(lis.length / 2)].classList.add("li3");
+                            if (isTouch) {
+                                menu.ul = document.getElementById(id);
+                                menu.ul.addEventListener("touchstart", menu, false);
+                                return menu;
+                            }
+                        }
+                        return menu;
+                    })().init("menu_4_ul");
+                </script>
+            </div>
+        </div>
+
+    </footer>
+</div>
 </body>
 </html>
 
@@ -1094,14 +1093,14 @@
 
 </title></head>
 <body>
-    <form method="post" action="index?code=011410544f91f145e4584906f7f3ff3E&amp;state=64e165ef66914c4eba1836f60d01429b" id="form1">
-<div class="aspNetHidden">
-<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKLTEzNDM3NzkxOWRk/NdkIty6t9pwNpbyJFKrA6FPsHsQN27n7rq/W1q4ItA=" />
-</div>
+<form method="post" action="index?code=011410544f91f145e4584906f7f3ff3E&amp;state=64e165ef66914c4eba1836f60d01429b" id="form1">
+    <div class="aspNetHidden">
+        <input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKLTEzNDM3NzkxOWRkL7rdh6sP/EXBJ8YEX4LCdd63BA9frFPGvbJW2gQKzuA=" />
+    </div>
 
     <div>
-    
+
     </div>
-    </form>
+</form>
 </body>
 </html>

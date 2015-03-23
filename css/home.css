@@ -136,7 +136,7 @@ body{background:#f1f1f1;}
 }
 
 .slider_4 .widget_wrap{
-	
+
 }
 
 .slider_4 ul:not([style*="translate3d"]) li:nth-of-type(n+2){
@@ -186,7 +186,7 @@ body{background:#f1f1f1;}
 }
 
 .slider_5 .widget_wrap{
-	
+
 }
 
 .slider_5 .slider_5_indicate{
@@ -577,7 +577,7 @@ body{background:#f1f1f1;}
 /****************************************/
 .goodsList_2{}
 .goodsList_2 .widget_wrap{
-	
+
 }
 .goodsList_2 ul{
 	/*width:305px;*/
@@ -638,7 +638,7 @@ body{background:#f1f1f1;}
 /***********************************/
 .goodsList_3{}
 .goodsList_3 .widget_wrap{
-	
+
 }
 .goodsList_3 ul{
 	/*width:300px;
@@ -685,7 +685,7 @@ body{background:#f1f1f1;}
 /***********************************/
 .goodsList_4{}
 .goodsList_4 .widget_wrap{
-	
+
 }
 .goodsList_4 ul{
 	/*width:300px;
@@ -850,7 +850,7 @@ body{background:#f1f1f1;}
 /************************/
 .search_3{}
 .search_3 .widget_wrap{
-	
+
 }
 .search_3 .input_wrap{
 	padding:25px 30px;
@@ -1117,7 +1117,7 @@ body{background:#f1f1f1;}
 
 .topic_2{}
 .topic_2 .widget_wrap{
-	
+
 }
 .topic_2 ul{
 	/*width:305px;*/
@@ -1247,7 +1247,7 @@ body{background:#f1f1f1;}
 	margin:auto 7px;
 }
 .topic_4 ul li{
-	
+
 }
 .topic_4 ul li:last-of-type{
 	border:0;
@@ -1319,9 +1319,11 @@ body{background:#f1f1f1;}
 
 
 @font-face {font-family: "wiconfont";
-  url('font/menu/iconfont.woff') format('woff'), /* chrome��firefox */
-  url('font/menu/iconfont.ttf') format('truetype'), /* chrome��firefox��opera��Safari, Android, iOS 4.2+*/
-  url('font/menu/iconfont.svg#wiconfont') format('svg'); /* iOS 4.1- */
+    src: url('/micro-shop/css/font/menu/iconfont.eot'); /* IE9*/
+    src: url('/micro-shop/css/font/menu/iconfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('/micro-shop/css/font/menu/iconfont.woff') format('woff'), /* chrome、firefox */
+    url('/micro-shop/css/font/menu/iconfont.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+    url('/micro-shop/css/font/menu/iconfont.svg#wiconfont') format('svg'); /* iOS 4.1- */
 }
 
 *[class*="wicon-"] {
