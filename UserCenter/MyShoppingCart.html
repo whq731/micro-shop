@@ -1,0 +1,188 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" ng-app="WmallAPP">
+<head>
+    <title>购物车</title>
+    <meta charset="utf-8">
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+    <meta content="eric.wu" name="author">
+    <meta content="application/xhtml+xml;charset=UTF-8" http-equiv="Content-Type">
+    <meta content="no-cache,must-revalidate" http-equiv="Cache-Control">
+    <meta content="no-cache" http-equiv="pragma">
+    <meta content="0" http-equiv="expires">
+    <meta content="telephone=no, address=no" name="format-detection">
+    <meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+    <link href="../css/reset.css?v=20141102" rel="stylesheet" />
+    <link href="../css/common.css?v=20141102" rel="stylesheet" />
+    <link href="../css/shopcart2.css?v=20141102" rel="stylesheet" />
+    <script>
+        var APP = {
+            page: "shopcart",
+            message: true,
+            goTop: true,
+            limit:{val:0,name:'\u590f\u5a03\u7684\u79d8\u5bc6'}, //val: 1-只允许粉丝购买
+            shareInfo:{followUrl:""},
+            urls: {
+                shopcart_url: "/vshop/Ajax/Get/ShoppingCartList",
+                shopcartBuy_url: "/vshop/Ajax/Post/CheckProducts",
+                ordercreate_page:"/vshop/Order/CreateOrder",
+                fav_goods_url: "/vshop/Ajax/Post/MoveToCollect",
+                del_goods_url: "/vshop/Ajax/Post/DeleteShoppingCart"
+            }
+        }
+    </script>
+    <script src="../js/sea.js?v=044"></script>
+    <script>
+        (function (l) {
+            seajs.config({
+//                base: "/vshop/Assets/",
+                map: [
+                    [".js", (l && l[1] || "") + ".js?v=044"]
+                ]
+            });
+            //
+            seajs.use("js_cmd/shopcart2");
+        })(location.href.match(/de(\-\d+)bug/));
+    </script>
+</head>
+<body onselectstart="return true;" ondragstart="return false;" ng-controller="shopcart_Controller">
+<div data-role="container" class="container shopcart" >
+    <header data-role="header"><!----></header>
+    <section data-role="body" class="body">
+        <div class="section_goods _goods {{null==data || data.length || invalidData.length?'':'empty'}}">
+            <form id="form_shopcart_list" action="data/test.json" method="post" class="hidden" style="display:{{data.length ||invalidData.length?'inherit':'hidden'}};">
+                <div ng-if="data.length" class="shopcart_list_header">
+                    <li class="tbox">
+                        <div ng-click="selectAll($this, $event);" >
+									<span class="input_wrap">
+										<div id="checkAll" name="" value="" class="radio " ng-checked="{{checkAll?'true':''}}" ></div>
+									</span>
+                        </div>
+                        <div style="width:100%;">
+                            <label>全选</label>
+                        </div>
+                        <div>
+                            <a href="javascript:;" class="icon_del {{enableDel?'':'hidden'}}" id="delGoods" ng-click="selectDel($this, $event);">&nbsp;</a>
+                        </div>
+                    </li>
+                </div>
+                <ul id="shopcart_list_body" class="shopcart_list_body list_goods">
+                    <li ng-repeat="g in data" class="">
+                        <div class="tbox">
+                            <div ng-if="0 != g.Sum" ng-click="selectOne($this, $event, $index);">
+										<span>
+											<div ng-checked="{{g.checked?'true':''}}" name="good_id" value="{{g.Id}}" class="radio" ></div>
+										</span>
+                            </div>
+                            <div ng-if="0 == g.Sum">
+										<span>
+											<div name="good_id" value="{{g.Id}}" class="radio" >失效</div>
+										</span>
+                            </div>
+                            <div>
+										<span class="img_wrap">
+											<img ng-src="{{g.ImageUrl}}" ng-click="goToDetail($this, $event, g);" />
+										</span>
+                                <figcaption>{{g.ac_title}}&nbsp;</figcaption>
+                            </div>
+                            <div>
+                                <p class="title">{{g.Name}}</p>
+                                <p class="price">￥{{g.Price|rePrice}}</p>
+                                <p>{{g.Description}}</p>
+                                <p>
+                                <dl ng-if="0 != g.Sum">
+                                    <dd>
+                                        <a href="javascript:;" ng-click="changeSum($this, $event, '-', $index);">&nbsp;</a>
+                                    </dd>
+                                    <dd>
+                                        <input type="tel" name="sum" value="{{g.Sum|reSum:g}}" readonly="true" />
+                                    </dd>
+                                    <dd>
+                                        <a href="javascript:;" ng-click="changeSum($this, $event, '+', $index);">&nbsp;</a>
+                                    </dd>
+                                </dl>
+                                </p>
+                            </div>
+                        </div>
+                    </li>
+                    <li ng-repeat="g in invalidData" class="">
+                        <div class="tbox">
+                            <div ng-if="0 != g.Sum" ng-click="selectOne($this, $event, $index);">
+										<span>
+											<div ng-checked="{{g.checked?'true':''}}" name="good_id" value="{{g.Id}}" class="radio" ></div>
+										</span>
+                            </div>
+                            <div ng-if="0 == g.Sum">
+										<span>
+											<div name="good_id" value="{{g.Id}}" class="radio" >失效</div>
+										</span>
+                            </div>
+                            <div>
+										<span class="img_wrap">
+											<img ng-src="{{g.ImageUrl}}" ng-click="goToDetail($this, $event, g);" />
+										</span>
+                                <figcaption>{{g.ac_title|ac_title:g}}&nbsp;</figcaption>
+                            </div>
+                            <div>
+                                <p class="title">{{g.Name}}</p>
+                                <p class="price">￥{{g.Price|rePrice}}</p>
+                                <p>{{g.Description}}</p>
+                                <p>
+                                <dl ng-if="0 != g.Sum">
+                                    <dd>
+                                        <a href="javascript:;" ng-click="changeSum($this, $event, '-', $index);">&nbsp;</a>
+                                    </dd>
+                                    <dd>
+                                        <input type="tel" name="sum" value="{{g.Sum|reSum:g}}" readonly="true" />
+                                    </dd>
+                                    <dd>
+                                        <a href="javascript:;" ng-click="changeSum($this, $event, '+', $index);">&nbsp;</a>
+                                    </dd>
+                                </dl>
+                                </p>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <input type="hidden" id="cartData" name="data" value="" />
+            </form>
+        </div>
+        <div class="hidden" style="display:{{invalidData.length?'inherit':'hidden'}};">
+            <a href="javascript:;" class="btn_del_invalid_goods" ng-click="delInvalidGoods($this, $event);">清空失效商品</a>
+        </div>
+    </section>
+    <footer data-role="footer">
+        <!--div data-role="copyright">
+            <a href="javascript:;" class="copyright">@微盟技术支持</a>
+        </div-->
+        <div data-role="widget" data-widget="footer_sub_btn" class="footer_sub_btn" >
+            <div class="widget_wrap hidden" style="display:{{data.length?'inherit':'hidden'}};">
+                <ul>
+                    <ol class="tbox activity" style="visibility:{{activity.price_youhui>0?'inherit':'hidden'}};">
+                        <dd>
+                            <label>您可以参加{{activity.Title}}活动</label>
+                        </dd>
+                        <dd>
+                            <label ng-show="activity.price_youhui">{{"已减 - ￥"+(activity.price_youhui|rePrice)}}</label>
+                        </dd>
+                    </ol>
+                    <ol class="tbox">
+                        <li>
+                            <div class="price_des" id="price_des">
+                                <p>总计<span class="price_total">￥{{totleAmount|rePrice}}</span></p>
+                                <p>(共{{totleSum}}件，不含运费)</p>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="javascript:;" class="btn red" id="btn_buy"  ng-click="checkout($this, $event);">去结算</a>
+                        </li>
+                    </ol>
+                </ul>
+            </div>
+        </div>
+    </footer>
+</div>
+</body>
+</html>
